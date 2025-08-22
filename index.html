@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OmniLux CRM - Complete wireframes, feature showcase, and market analysis for HIPAA-compliant medical spa management platform">
+    <meta name="author" content="Dynamic Duo Team">
+    <title>OmniLux CRM - Enhanced Wireframes &amp; Feature Showcase</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <style>
+        .wireframe-box {
+            border: 2px dashed #6b7280;
+            background: #f9fafb;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .dashboard-mockup {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .nav-item {
+            padding: 12px 16px;
+            border-radius: 6px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .nav-item:hover {
+            background: #f3f4f6;
+        }
+        .nav-item.active {
+            background: #3b82f6;
+            color: white;
+        }
+        .feature-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            background: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .step-box {
+            background: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 4px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        .phase-container {
+            background: #fafafa;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        @media print {
+            body { print-color-adjust: exact; }
+            .no-print { display: none !important; }
+        }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus states for better accessibility */
+        a:focus,
+        button:focus {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* Loading state optimization */
+        img {
+            loading: lazy;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 leading-relaxed">
+    <!-- Skip navigation for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">Skip to main content</a>
+
+    <div class="max-w-7xl mx-auto p-8" id="main-content">
+
+        <!-- Header -->
+        <header class="text-center mb-12 bg-white p-8 rounded-lg shadow-sm">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">
+                <i class="fas fa-spa mr-3"></i>OmniLux CRM
+            </h1>
+            <h2 class="text-2xl text-gray-700 mb-2">Dynamic Duo Development Roadmap</h2>
+            <p class="text-lg text-gray-600">Complete Wireframes, Feature Showcase & Market Analysis</p>
+            <div class="mt-4 flex justify-center space-x-6 text-sm text-gray-500">
+                <span><i class="fas fa-calendar-alt mr-1"></i>Updated: August 2025</span>
+                <span><i class="fas fa-users mr-1"></i>Dynamic Duo Team</span>
+                <span><i class="fas fa-shield-alt mr-1"></i>HIPAA Compliant</span>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+            <h3 class="text-xl font-semibold mb-4">Table of Contents</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#market-analysis" class="text-blue-600 hover:underline">1. Market Analysis</a></li>
+                        <li><a href="#wireframes" class="text-blue-600 hover:underline">2. Wireframes & Dashboard Design</a></li>
+                        <li><a href="#navigation" class="text-blue-600 hover:underline">3. Navigation Structure</a></li>
+                        <li><a href="#features" class="text-blue-600 hover:underline">4. Feature Showcase</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-2">
+                        <li><a href="#development-flow" class="text-blue-600 hover:underline">5. Development Flowchart</a></li>
+                        <li><a href="#technical-arch" class="text-blue-600 hover:underline">6. Technical Architecture</a></li>
+                        <li><a href="#compliance" class="text-blue-600 hover:underline">7. HIPAA Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Analysis Section -->
+        <section id="market-analysis" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-chart-line text-blue-600 mr-3"></i>Verified Market Analysis
+                </h2>
+
+                <div class="bold grid lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Medical Spa Market -->
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Medical Spa Market (AmSpa 2024)</h3>
+                        <div class="space-y-8">
+                            <div class="flex justify-between">
+                                <span class=" text-gray-700">Total Locations:</span>
+                                <span class="font-semibold">10,488 medspas</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Average Revenue:</span>
+                                <span class="font-semibold">$1,398,833/year</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Growth Rate:</span>
+                                <span class="font-semibold text-green-600">+17.9% locations</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Patient Demographics:</span>
+                                <span class="font-semibold">89% female</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Repeat Patients:</span>
+                                <span class="font-semibold">73%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competitive Landscape -->
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-4">Competitive Analysis</h3>
+                        <div class="space-y-3">
+                            <div class="border-b border-green-200 pb-2">
+                                <div class="font-medium">Boulevard.io</div>
+                                <div class="text-sm text-gray-600">$71.4M revenue, 360 employees, $158-$369/month</div>
+                            </div>
+                            <div class="border-b border-green-200 pb-2">
+                                <div class="font-medium">Market Gap</div>
+                                <div class="text-sm text-gray-600">HIPAA compliance major weakness in salon software</div>
+                            </div>
+                            <div class="border-b border-green-200 pb-2">
+                                <div class="font-medium">Pricing Opportunity</div>
+                                <div class="text-sm text-gray-600">20-30% below current market leaders</div>
+                            </div>
+                            <div>
+                                <div class="font-medium">Technology Gap</div>
+                                <div class="text-sm text-gray-600">Most medspas using Excel or outdated systems</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Segments -->
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Target Market Segments</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">10,488</div>
+                            <div class="text-sm text-gray-600 mt-1">Medical Spas</div>
+                            <div class="text-xs text-gray-500 mt-2">Primary Target • High Revenue • HIPAA Critical</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600">19,979</div>
+                            <div class="text-sm text-gray-600 mt-1">Traditional Spas</div>
+                            <div class="text-xs text-gray-500 mt-2">Secondary Target • Moderate Revenue • Basic Compliance</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600">50,000+</div>
+                            <div class="text-sm text-gray-600 mt-1">Small Clinics</div>
+                            <div class="text-xs text-gray-500 mt-2">Tertiary Target • HIPAA Required • Growth Potential</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wireframes & Dashboard Design -->
+        <section id="wireframes" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-drafting-compass text-blue-600 mr-3"></i>Wireframes & Dashboard Design
+                </h2>
+
+                <!-- Dashboard Layout Overview -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Main Dashboard Layout: Example Concept - Mock Up</h3>
+                    <div class="dashboard-mockup p-4">
+                        <!-- Top Navigation Bar -->
+                        <div class="bg-blue-600 text-white p-3 rounded-t-lg flex justify-between items-center">
+                            <div class="flex items-center">
+                                <i class="fas fa-spa mr-2"></i>
+                                <span class="font-semibold">OmniLux CRM</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-bell"></i>
+                                <i class="fas fa-user-circle"></i>
+                                <span class="text-sm">Sarah Martinez</span>
+                            </div>
+                        </div>
+
+                        <!-- Main Content Area -->
+                        <div class="flex">
+                            <!-- Sidebar Navigation -->
+                            <div class="w-64 bg-gray-50 p-4 border-r">
+                                <nav class="space-y-2">
+                                    <div class="nav-item active">
+                                        <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                                    </div>
+                                    <div class="nav-item">
+                                        <i class="fas fa-calendar-alt mr-2"></i>Schedule
+                                    </div>
+                                    <div class="nav-item">
+                                        <i class="fas fa-users mr-2"></i>Clients
+                                    </div>
+                                    <div class="nav-item">
+                                        <i class="fas fa-credit-card mr-2"></i>Payments
+                                    </div>
+                                    <div class="nav-item">
+                                        <i class="fas fa-file-medical mr-2"></i>Forms
+                                    </div>
+                                    <div class="nav-item">
+                                        <i class="fas fa-chart-bar mr-2"></i>Reports
+                                    </div>
+                                    <div class="nav-item">
+                                        <i class="fas fa-shield-alt mr-2"></i>Compliance
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <!-- Main Dashboard Content -->
+                            <div class="flex-1 p-6">
+                                <!-- KPI Cards -->
+                                <div class="grid md:grid-cols-4 gap-4 mb-6">
+                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                        <div class="flex items-center">
+                                            <div class="bg-blue-500 p-2 rounded">
+                                                <i class="fas fa-calendar text-white"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm text-gray-600">Today's Appointments</div>
+                                                <div class="text-2xl font-bold text-blue-600">24</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-green-50 p-4 rounded-lg">
+                                        <div class="flex items-center">
+                                            <div class="bg-green-500 p-2 rounded">
+                                                <i class="fas fa-dollar-sign text-white"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm text-gray-600">Today's Revenue</div>
+                                                <div class="text-2xl font-bold text-green-600">$3,847</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                        <div class="flex items-center">
+                                            <div class="bg-purple-500 p-2 rounded">
+                                                <i class="fas fa-user-plus text-white"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm text-gray-600">New Clients</div>
+                                                <div class="text-2xl font-bold text-purple-600">7</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                        <div class="flex items-center">
+                                            <div class="bg-orange-500 p-2 rounded">
+                                                <i class="fas fa-exclamation-triangle text-white"></i>
+                                            </div>
+                                            <div class="ml-3">
+                                                <div class="text-sm text-gray-600">Compliance Alerts</div>
+                                                <div class="text-2xl font-bold text-orange-600">2</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Actions & Recent Activity -->
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold mb-3">Quick Actions</h4>
+                                        <div class="space-y-2">
+                                            <button class="w-full bg-blue-600 text-white p-2 rounded text-sm">
+                                                <i class="fas fa-plus mr-2"></i>New Appointment
+                                            </button>
+                                            <button class="w-full bg-green-600 text-white p-2 rounded text-sm">
+                                                <i class="fas fa-user-plus mr-2"></i>Add Client
+                                            </button>
+                                            <button class="w-full bg-purple-600 text-white p-2 rounded text-sm">
+                                                <i class="fas fa-file-alt mr-2"></i>Generate Report
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-semibold mb-3">Recent Activity</h4>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span>Client check-in: Jane Doe</span>
+                                                <span class="text-gray-500">2 min ago</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Payment received: $275</span>
+                                                <span class="text-gray-500">15 min ago</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>New appointment booked</span>
+                                                <span class="text-gray-500">32 min ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Dashboard Wireframe -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Mobile Dashboard Design: Example Concept - Mock Up</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Mobile Home Screen -->
+                        <div class="dashboard-mockup p-4 max-w-sm mx-auto">
+                            <div class="bg-blue-600 text-white p-3 rounded-t-lg text-center">
+                                <span class="font-semibold">OmniLux Mobile</span>
+                            </div>
+                            <div class="p-4">
+                                <!-- Mobile KPIs -->
+                                <div class="grid grid-cols-2 gap-3 mb-4">
+                                    <div class="bg-blue-50 p-3 rounded text-center">
+                                        <div class="text-lg font-bold text-blue-600">24</div>
+                                        <div class="text-xs text-gray-600">Today's Appts</div>
+                                    </div>
+                                    <div class="bg-green-50 p-3 rounded text-center">
+                                        <div class="text-lg font-bold text-green-600">$3,847</div>
+                                        <div class="text-xs text-gray-600">Revenue</div>
+                                    </div>
+                                </div>
+                                <!-- Mobile Actions -->
+                                <div class="space-y-2">
+                                    <button class="w-full bg-blue-600 text-white p-2 rounded text-sm">
+                                        <i class="fas fa-calendar-plus mr-2"></i>Book Appointment
+                                    </button>
+                                    <button class="w-full bg-gray-600 text-white p-2 rounded text-sm">
+                                        <i class="fas fa-users mr-2"></i>View Clients
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Mobile Bottom Navigation -->
+                            <div class="bg-gray-100 p-2 rounded-b-lg">
+                                <div class="flex justify-around text-xs">
+                                    <div class="text-center text-blue-600">
+                                        <i class="fas fa-home block mb-1"></i>
+                                        <span>Home</span>
+                                    </div>
+                                    <div class="text-center text-gray-500">
+                                        <i class="fas fa-calendar block mb-1"></i>
+                                        <span>Schedule</span>
+                                    </div>
+                                    <div class="text-center text-gray-500">
+                                        <i class="fas fa-users block mb-1"></i>
+                                        <span>Clients</span>
+                                    </div>
+                                    <div class="text-center text-gray-500">
+                                        <i class="fas fa-cog block mb-1"></i>
+                                        <span>Settings</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Appointment View -->
+                        <div class="dashboard-mockup p-4 max-w-sm mx-auto">
+                            <div class="bg-green-600 text-white p-3 rounded-t-lg flex justify-between items-center">
+                                <i class="fas fa-arrow-left"></i>
+                                <span class="font-semibold">Today's Schedule</span>
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="p-4">
+                                <div class="space-y-3">
+                                    <div class="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
+                                        <div class="font-medium text-sm">9:00 AM - Botox Consultation</div>
+                                        <div class="text-xs text-gray-600">Sarah Johnson</div>
+                                        <div class="text-xs text-blue-600 mt-1">Check-in Ready</div>
+                                    </div>
+                                    <div class="bg-gray-50 p-3 rounded border-l-4 border-gray-300">
+                                        <div class="font-medium text-sm">10:30 AM - Facial Treatment</div>
+                                        <div class="text-xs text-gray-600">Emma Wilson</div>
+                                        <div class="text-xs text-gray-600 mt-1">Scheduled</div>
+                                    </div>
+                                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-500">
+                                        <div class="font-medium text-sm">2:00 PM - Follow-up Visit</div>
+                                        <div class="text-xs text-gray-600">Michael Chen</div>
+                                        <div class="text-xs text-green-600 mt-1">Completed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client Management Wireframe -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Client Management Interface: Example Concept - Mock Up</h3>
+                    <div class="dashboard-mockup p-4">
+                        <!-- Client List Header -->
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-lg font-semibold">Client Management</h4>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="Search clients..." class="border px-3 py-1 rounded text-sm">
+                                <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">
+                                    <i class="fas fa-plus mr-1"></i>Add Client
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Client Cards -->
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        SJ
+                                    </div>
+                                    <div class="ml-3">
+                                        <div class="font-medium">Sarah Johnson</div>
+                                        <div class="text-sm text-gray-600">sarah.j@email.com</div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-600 space-y-1">
+                                    <div><i class="fas fa-calendar mr-2"></i>Last Visit: Aug 15, 2025</div>
+                                    <div><i class="fas fa-dollar-sign mr-2"></i>Total Spent: $2,847</div>
+                                    <div><i class="fas fa-user-check mr-2"></i>Treatments: 12</div>
+                                </div>
+                                <div class="mt-3 flex space-x-2">
+                                    <button class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">View Profile</button>
+                                    <button class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Book Appointment</button>
+                                </div>
+                            </div>
+
+                            <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        EW
+                                    </div>
+                                    <div class="ml-3">
+                                        <div class="font-medium">Emma Wilson</div>
+                                        <div class="text-sm text-gray-600">emma.w@email.com</div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-600 space-y-1">
+                                    <div><i class="fas fa-calendar mr-2"></i>Last Visit: Aug 20, 2025</div>
+                                    <div><i class="fas fa-dollar-sign mr-2"></i>Total Spent: $1,543</div>
+                                    <div><i class="fas fa-user-check mr-2"></i>Treatments: 8</div>
+                                </div>
+                                <div class="mt-3 flex space-x-2">
+                                    <button class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">View Profile</button>
+                                    <button class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Book Appointment</button>
+                                </div>
+                            </div>
+
+                            <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                                <div class="flex items-center mb-2">
+                                    <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                                        MC
+                                    </div>
+                                    <div class="ml-3">
+                                        <div class="font-medium">Michael Chen</div>
+                                        <div class="text-sm text-gray-600">m.chen@email.com</div>
+                                    </div>
+                                </div>
+                                <div class="text-sm text-gray-600 space-y-1">
+                                    <div><i class="fas fa-calendar mr-2"></i>Last Visit: Aug 18, 2025</div>
+                                    <div><i class="fas fa-dollar-sign mr-2"></i>Total Spent: $892</div>
+                                    <div><i class="fas fa-user-check mr-2"></i>Treatments: 4</div>
+                                </div>
+                                <div class="mt-3 flex space-x-2">
+                                    <button class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">View Profile</button>
+                                    <button class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Book Appointment</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Structure -->
+        <section id="navigation" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-sitemap text-blue-600 mr-3"></i>Navigation Structure
+                </h2>
+
+                <!-- Information Architecture -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Information Architecture</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <!-- Dashboard Section -->
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-blue-600 mb-3">
+                                    <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                                </h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Overview KPIs</li>
+                                    <li>• Today's Schedule</li>
+                                    <li>• Quick Actions</li>
+                                    <li>• Recent Activity</li>
+                                    <li>• Notifications</li>
+                                </ul>
+                            </div>
+
+                            <!-- Scheduling Section -->
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-green-600 mb-3">
+                                    <i class="fas fa-calendar-alt mr-2"></i>Scheduling
+                                </h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Calendar View</li>
+                                    <li>• Book Appointment</li>
+                                    <li>• Staff Schedules</li>
+                                    <li>• Room Management</li>
+                                    <li>• Recurring Bookings</li>
+                                </ul>
+                            </div>
+
+                            <!-- Client Management -->
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-purple-600 mb-3">
+                                    <i class="fas fa-users mr-2"></i>Clients
+                                </h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Client Directory</li>
+                                    <li>• Client Profiles</li>
+                                    <li>• Treatment History</li>
+                                    <li>• Photo Gallery</li>
+                                    <li>• Communication Log</li>
+                                </ul>
+                            </div>
+
+                            <!-- Compliance Section -->
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-orange-600 mb-3">
+                                    <i class="fas fa-shield-alt mr-2"></i>Compliance
+                                </h4>
+                                <ul class="text-sm space-y-1">
+                                    <li>• HIPAA Dashboard</li>
+                                    <li>• Audit Logs</li>
+                                    <li>• Form Management</li>
+                                    <li>• Consent Tracking</li>
+                                    <li>• Security Reports</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Role-Based Navigation -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Role-Based Navigation Access</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Owner/Admin -->
+                        <div class="bg-red-50 p-4 rounded-lg border">
+                            <h4 class="font-semibold text-red-700 mb-3">
+                                <i class="fas fa-crown mr-2"></i>Owner/Admin
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Full Dashboard Access</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>All Scheduling Functions</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Complete Client Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Financial Reports</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Staff Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Compliance Management</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Medical Director -->
+                        <div class="bg-blue-50 p-4 rounded-lg border">
+                            <h4 class="font-semibold text-blue-700 mb-3">
+                                <i class="fas fa-user-md mr-2"></i>Medical Director
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Clinical Dashboard</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Patient Scheduling</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Medical Records</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Treatment Documentation</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>Financial Data</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Compliance Oversight</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Front Desk Staff -->
+                        <div class="bg-green-50 p-4 rounded-lg border">
+                            <h4 class="font-semibold text-green-700 mb-3">
+                                <i class="fas fa-user-tie mr-2"></i>Front Desk Staff
+                            </h4>
+                            <div class="text-sm space-y-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Booking Dashboard</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Appointment Management</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Client Check-in/out</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Payment Processing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2"></i>
+                                    <span>Medical Records</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    <span>Basic Client Info</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              <!-- Navigation Flow Diagram -->
+              <div>
+                  <h3 class="text-xl font-semibold text-gray-700 mb-4">User Navigation Flow</h3>
+                  <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg">
+                      <!-- Desktop/Tablet Flow -->
+                      <div class="hidden md:block">
+                          <!-- Main Flow Row -->
+                          <div class="flex items-center justify-between mb-8">
+                              <!-- Login -->
+                              <div class="bg-white p-4 rounded-lg text-center shadow-sm border-2 border-blue-200 flex-shrink-0">
+                                  <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                      <i class="fas fa-sign-in-alt text-white"></i>
+                                  </div>
+                                  <div class="text-sm font-semibold text-blue-700">Login</div>
+                                  <div class="text-xs text-gray-600">Secure Access</div>
+                              </div>
+
+                              <!-- Arrow 1 -->
+                              <div class="flex-shrink-0 px-2">
+                                  <i class="fas fa-arrow-right text-blue-400 text-2xl"></i>
+                              </div>
+
+                              <!-- Dashboard -->
+                              <div class="bg-white p-4 rounded-lg text-center shadow-sm border-2 border-green-200 flex-shrink-0">
+                                  <div class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                      <i class="fas fa-tachometer-alt text-white"></i>
+                                  </div>
+                                  <div class="text-sm font-semibold text-green-700">Dashboard</div>
+                                  <div class="text-xs text-gray-600">Main Hub</div>
+                              </div>
+
+                              <!-- Arrow 2 -->
+                              <div class="flex-shrink-0 px-2">
+                                  <i class="fas fa-arrow-right text-green-400 text-2xl"></i>
+                              </div>
+
+                              <!-- Action Selection -->
+                              <div class="bg-white p-4 rounded-lg border-2 border-purple-200 shadow-sm flex-shrink-0 min-w-0">
+                                  <div class="text-sm font-semibold mb-3 text-center text-purple-700">Select Action</div>
+                                  <div class="grid grid-cols-2 gap-2 text-xs">
+                                      <div class="bg-purple-50 p-2 rounded text-center">
+                                          <i class="fas fa-calendar-plus text-purple-600 mb-1 block"></i>
+                                          Schedule
+                                      </div>
+                                      <div class="bg-purple-50 p-2 rounded text-center">
+                                          <i class="fas fa-users text-purple-600 mb-1 block"></i>
+                                          Clients
+                                      </div>
+                                      <div class="bg-purple-50 p-2 rounded text-center">
+                                          <i class="fas fa-credit-card text-purple-600 mb-1 block"></i>
+                                          Payment
+                                      </div>
+                                      <div class="bg-purple-50 p-2 rounded text-center">
+                                          <i class="fas fa-chart-bar text-purple-600 mb-1 block"></i>
+                                          Reports
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <!-- Arrow 3 -->
+                              <div class="flex-shrink-0 px-2">
+                                  <i class="fas fa-arrow-right text-purple-400 text-2xl"></i>
+                              </div>
+
+                              <!-- Task Completion -->
+                              <div class="bg-white p-4 rounded-lg text-center shadow-sm border-2 border-green-200 flex-shrink-0">
+                                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                      <i class="fa-solid fa-thumbs-up"></i> <!-- Corrected icon class -->
+                                  </div>
+                                  <div class="text-sm font-semibold text-orange-700">Complete</div>
+                                  <div class="text-xs text-gray-600">Task Done</div>
+                              </div>
+                          </div>
+
+                          <!-- Return Flow -->
+                          <div class="flex justify-center">
+                              <div class="bg-white rounded-lg px-6 py-3 shadow-sm border border-gray-300 flex items-center space-x-3">
+                                  <i class="fas fa-undo text-gray-500"></i>
+                                  <span class="text-sm text-gray-700 font-medium">Return to Dashboard</span>
+                                  <i class="fas fa-arrow-up text-gray-500"></i>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Mobile Flow -->
+                      <div class="md:hidden">
+                          <div class="text-center text-lg font-semibold text-gray-700 mb-6">User Journey Flow</div>
+
+                          <div class="space-y-4">
+                              <!-- Step 1 -->
+                              <div class="flex items-center space-x-4">
+                                  <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-blue-200 shadow-sm">
+                                      <div class="flex items-center">
+                                          <i class="fas fa-sign-in-alt text-blue-500 mr-3 text-lg"></i>
+                                          <div>
+                                              <div class="font-semibold text-gray-800">Login</div>
+                                              <div class="text-xs text-gray-600">Secure Access</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <!-- Connecting line -->
+                              <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
+
+                              <!-- Step 2 -->
+                              <div class="flex items-center space-x-4">
+                                  <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-green-200 shadow-sm">
+                                      <div class="flex items-center">
+                                          <i class="fas fa-tachometer-alt text-green-500 mr-3 text-lg"></i>
+                                          <div>
+                                              <div class="font-semibold text-gray-800">Dashboard</div>
+                                              <div class="text-xs text-gray-600">Main Hub</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <!-- Connecting line -->
+                              <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
+
+                              <!-- Step 3 -->
+                              <div class="flex items-start space-x-4">
+                                  <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
+                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-purple-200 shadow-sm">
+                                      <div class="font-semibold text-gray-800 mb-3">Select Action:</div>
+                                      <div class="grid grid-cols-2 gap-2">
+                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                              <i class="fas fa-calendar-plus text-purple-600 mb-1 block"></i>
+                                              Schedule
+                                          </div>
+                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                              <i class="fas fa-users text-purple-600 mb-1 block"></i>
+                                              Clients
+                                          </div>
+                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                              <i class="fas fa-credit-card text-purple-600 mb-1 block"></i>
+                                              Payment
+                                          </div>
+                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                              <i class="fas fa-chart-bar text-purple-600 mb-1 block"></i>
+                                              Reports
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <!-- Connecting line -->
+                              <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
+
+                              <!-- Step 4 -->
+                              <div class="flex items-center space-x-4">
+                                  <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
+                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-orange-200 shadow-sm">
+                                      <div class="flex items-center">
+                                          <i class="fas fa-check-circle text-orange-500 mr-3 text-lg"></i>
+                                          <div>
+                                              <div class="font-semibold text-gray-800">Complete Task</div>
+                                              <div class="text-xs text-gray-600">Task Done</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                              <!-- Return Flow -->
+                              <div class="flex justify-center pt-4">
+                                  <div class="bg-gray-100 border-2 border-gray-300 rounded-lg px-6 py-3 flex items-center space-x-2 shadow-sm">
+                                      <i class="fas fa-undo text-gray-600"></i>
+                                      <span class="text-sm font-medium text-gray-700">Return to Dashboard</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </section>
+
+        <!-- Feature Showcase -->
+        <section id="features" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-star text-blue-600 mr-3"></i>Feature Showcase
+                </h2>
+
+                <!-- Core Features Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- HIPAA-Compliant Scheduling -->
+                    <div class="feature-card">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-calendar-check text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">HIPAA-Compliant Scheduling</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Advanced scheduling system with encrypted patient data, automated reminders, and audit trails for complete HIPAA compliance.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Encrypted appointment data</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Automated HIPAA-safe reminders</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Complete access audit trail</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patient Management -->
+                    <div class="feature-card">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-user-shield text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Secure Patient Management</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Comprehensive patient profiles with treatment history, medical records, and secure photo storage with granular access controls.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Encrypted medical records</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Before/after photo vault</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Treatment timeline tracking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Consent Management -->
+                    <div class="feature-card">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-file-signature text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Digital Consent Management</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Electronic consent forms with version control, e-signatures, and automated renewal reminders for treatment protocols.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Legally binding e-signatures</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Version-controlled forms</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Automated renewal alerts</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compliance Dashboard -->
+                    <div class="feature-card">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-green-400 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Real-time Compliance Monitoring</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Live compliance dashboard with automated alerts, audit preparation, and violation prevention for seamless HIPAA adherence.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Real-time violation alerts</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Automated audit reports</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Compliance score tracking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Processing -->
+                    <div class="feature-card">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-credit-card text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Secure Payment Processing</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            HIPAA-compliant payment system with automated invoicing, membership management, and comprehensive financial reporting.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>PCI DSS compliant processing</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Automated membership billing</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Financial reporting suite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multi-tenant Architecture -->
+                    <div class="feature-card">
+                        <div class="mb-4">
+                            <div class="w-12 h-12 bg-green-200 rounded-lg flex items-center justify-center mb-3">
+                                <i class="fas fa-sitemap text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">Multi-location Management</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Centralized management for multiple locations with role-based access, unified reporting, and location-specific customizations.
+                        </p>
+                        <div class="space-y-2 text-xs">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Database-level isolation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Cross-location reporting</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Unified staff management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Comparison Table -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Feature Comparison vs Competitors</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse bg-white border border-gray-200 rounded-lg">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="border border-gray-200 px-4 py-3 text-left font-semibold">Feature</th>
+                                    <th class="border border-gray-200 px-4 py-3 text-center font-semibold text-blue-600">OmniLux CRM</th>
+                                    <th class="border border-gray-200 px-4 py-3 text-center font-semibold">Boulevard.io</th>
+                                    <th class="border border-gray-200 px-4 py-3 text-center font-semibold">Mindbody</th>
+                                    <th class="border border-gray-200 px-4 py-3 text-center font-semibold">Generic EMR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3">HIPAA Compliance (Built-in)</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-minus-circle text-yellow-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-200 px-4 py-3">Medical Spa Focused</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-minus-circle text-yellow-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3">Modern Technology Stack</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-minus-circle text-yellow-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="border border-gray-200 px-4 py-3">Pricing (Competitive)</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-minus-circle text-yellow-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="border border-gray-200 px-4 py-3">User Experience</td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-minus-circle text-yellow-500 text-xl"></i>
+                                    </td>
+                                    <td class="border border-gray-200 px-4 py-3 text-center">
+                                        <i class="fas fa-times-circle text-red-500 text-xl"></i>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4 text-xs text-gray-600 flex space-x-6">
+                        <span><i class="fas fa-check-circle text-green-500 mr-1"></i> Full Support</span>
+                        <span><i class="fas fa-minus-circle text-yellow-500 mr-1"></i> Partial Support</span>
+                        <span><i class="fas fa-times-circle text-red-500 mr-1"></i> Not Supported</span>
+                    </div>
+                </div>
+
+                <!-- Integration Ecosystem -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Integration Ecosystem</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-700 mb-2">
+                                <i class="fas fa-credit-card mr-2"></i>Payments
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Stripe (Primary)</li>
+                                <li>• Square POS</li>
+                                <li>• PayPal</li>
+                                <li>• Apple Pay/Google Pay</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-700 mb-2">
+                                <i class="fas fa-envelope mr-2"></i>Communications
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Twilio (HIPAA SMS)</li>
+                                <li>• Mailgun (BAA Email)</li>
+                                <li>• SendGrid (Marketing)</li>
+                                <li>• Voice/Video Calls</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-700 mb-2">
+                                <i class="fas fa-calculator mr-2"></i>Accounting
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• QuickBooks Online</li>
+                                <li>• Xero</li>
+                                <li>• FreshBooks</li>
+                                <li>• Wave Accounting</li>
+                            </ul>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-semibold text-orange-700 mb-2">
+                                <i class="fas fa-file-signature mr-2"></i>Legal/Compliance
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• DocuSign (BAA)</li>
+                                <li>• HelloSign</li>
+                                <li>• Adobe Sign</li>
+                                <li>• Custom Forms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Development Flowchart -->
+        <section id="development-flow" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-code-branch text-blue-600 mr-3"></i>Incremental Development Flowchart
+                </h2>
+                <div class="mb-4 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                    <p class="text-yellow-800">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        <strong>Development Reality:</strong> This flowchart shows the enormous complexity of building a production-ready HIPAA-compliant platform. Each phase contains 50-200+ individual development steps.
+                    </p>
+                </div>
+
+                <!-- Phase 1: Foundation -->
+                <div class="phase-container">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">Phase 1: Foundation Setup (83 Steps)</h3>
+                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Project Initialization</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Create Next.js project</div>
+                                <div class="step-box">Setup TypeScript config</div>
+                                <div class="step-box">Configure ESLint rules</div>
+                                <div class="step-box">Install Prettier</div>
+                                <div class="step-box">Setup Git hooks</div>
+                                <div class="step-box">Create folder structure</div>
+                                <div class="step-box">Configure environment variables</div>
+                                <div class="step-box">Setup development scripts</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Database Setup</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Create Supabase project</div>
+                                <div class="step-box">Design database schema</div>
+                                <div class="step-box">Create users table</div>
+                                <div class="step-box">Create tenants table</div>
+                                <div class="step-box">Create appointments table</div>
+                                <div class="step-box">Create clients table</div>
+                                <div class="step-box">Setup RLS policies</div>
+                                <div class="step-box">Create audit logs table</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Authentication</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Setup Supabase auth</div>
+                                <div class="step-box">Create login component</div>
+                                <div class="step-box">Create signup component</div>
+                                <div class="step-box">Password reset flow</div>
+                                <div class="step-box">Auth state management</div>
+                                <div class="step-box">Protected routes</div>
+                                <div class="step-box">Role-based access</div>
+                                <div class="step-box">Session management</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <strong>Total Phase 1 Steps:</strong> 83 individual development tasks including environment setup, database design, authentication system, basic UI components, and initial deployment configuration.
+                    </div>
+                </div>
+
+                <!-- Phase 2: Core Features -->
+                <div class="phase-container">
+                    <h3 class="text-xl font-semibold text-green-600 mb-4">Phase 2: Core Business Logic (127 Steps)</h3>
+                    <div class="grid md:grid-cols-4 gap-4 mb-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Client Management</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Client list component</div>
+                                <div class="step-box">Client profile pages</div>
+                                <div class="step-box">Add client form</div>
+                                <div class="step-box">Edit client form</div>
+                                <div class="step-box">Client search function</div>
+                                <div class="step-box">Client filtering</div>
+                                <div class="step-box">Pagination system</div>
+                                <div class="step-box">Client data validation</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Scheduling System</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Calendar component</div>
+                                <div class="step-box">Time slot generation</div>
+                                <div class="step-box">Appointment booking</div>
+                                <div class="step-box">Recurring appointments</div>
+                                <div class="step-box">Conflict detection</div>
+                                <div class="step-box">Staff scheduling</div>
+                                <div class="step-box">Resource management</div>
+                                <div class="step-box">Appointment reminders</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">API Development</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Client CRUD APIs</div>
+                                <div class="step-box">Appointment APIs</div>
+                                <div class="step-box">Authentication APIs</div>
+                                <div class="step-box">File upload APIs</div>
+                                <div class="step-box">Search APIs</div>
+                                <div class="step-box">Notification APIs</div>
+                                <div class="step-box">Reporting APIs</div>
+                                <div class="step-box">Webhook handlers</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">UI Components</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Dashboard layout</div>
+                                <div class="step-box">Navigation components</div>
+                                <div class="step-box">Form components</div>
+                                <div class="step-box">Modal dialogs</div>
+                                <div class="step-box">Table components</div>
+                                <div class="step-box">Loading states</div>
+                                <div class="step-box">Error boundaries</div>
+                                <div class="step-box">Mobile responsive</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <strong>Total Phase 2 Steps:</strong> 127 development tasks covering client management, scheduling system, payment processing, API development, and comprehensive UI component library.
+                    </div>
+                </div>
+
+                <!-- Phase 3: HIPAA Compliance -->
+                <div class="phase-container">
+                    <h3 class="text-xl font-semibold text-orange-600 mb-4">Phase 3: HIPAA Compliance (156 Steps)</h3>
+                    <div class="grid md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Security Implementation</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Data encryption at rest</div>
+                                <div class="step-box">Data encryption in transit</div>
+                                <div class="step-box">Database encryption</div>
+                                <div class="step-box">File storage encryption</div>
+                                <div class="step-box">Password security</div>
+                                <div class="step-box">Token management</div>
+                                <div class="step-box">API security headers</div>
+                                <div class="step-box">Rate limiting</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Access Control</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Role-based permissions</div>
+                                <div class="step-box">User role assignment</div>
+                                <div class="step-box">Permission checking</div>
+                                <div class="step-box">Multi-factor authentication</div>
+                                <div class="step-box">Session timeout</div>
+                                <div class="step-box">IP whitelisting</div>
+                                <div class="step-box">Device registration</div>
+                                <div class="step-box">Emergency access</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Audit & Monitoring</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Comprehensive audit logs</div>
+                                <div class="step-box">User action tracking</div>
+                                <div class="step-box">Data access monitoring</div>
+                                <div class="step-box">Login attempt logs</div>
+                                <div class="step-box">Failed access alerts</div>
+                                <div class="step-box">Compliance reports</div>
+                                <div class="step-box">Violation detection</div>
+                                <div class="step-box">Incident response</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <strong>Total Phase 3 Steps:</strong> 156 compliance-focused tasks including encryption implementation, access controls, audit logging, compliance reporting, and security monitoring systems.
+                    </div>
+                </div>
+
+                <!-- Phase 4: Advanced Features -->
+                <div class="phase-container">
+                    <h3 class="text-xl font-semibold text-purple-600 mb-4">Phase 4: Advanced Features & Optimization (203 Steps)</h3>
+                    <div class="grid md:grid-cols-4 gap-4 mb-4">
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Payment Integration</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Stripe integration</div>
+                                <div class="step-box">Payment processing</div>
+                                <div class="step-box">Subscription management</div>
+                                <div class="step-box">Invoice generation</div>
+                                <div class="step-box">Payment reconciliation</div>
+                                <div class="step-box">Refund processing</div>
+                                <div class="step-box">Financial reporting</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Communications</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Email templates</div>
+                                <div class="step-box">SMS notifications</div>
+                                <div class="step-box">HIPAA-compliant messaging</div>
+                                <div class="step-box">Automated reminders</div>
+                                <div class="step-box">Marketing campaigns</div>
+                                <div class="step-box">Communication logs</div>
+                                <div class="step-box">Opt-out management</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Reporting & Analytics</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Revenue reports</div>
+                                <div class="step-box">Appointment analytics</div>
+                                <div class="step-box">Client analytics</div>
+                                <div class="step-box">Staff performance</div>
+                                <div class="step-box">Custom reports</div>
+                                <div class="step-box">Data visualization</div>
+                                <div class="step-box">Export functionality</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-4 rounded border">
+                            <h4 class="font-semibold text-gray-700 mb-2">Performance & Testing</h4>
+                            <div class="space-y-1">
+                                <div class="step-box">Performance optimization</div>
+                                <div class="step-box">Database optimization</div>
+                                <div class="step-box">Unit testing</div>
+                                <div class="step-box">Integration testing</div>
+                                <div class="step-box">E2E testing</div>
+                                <div class="step-box">Security testing</div>
+                                <div class="step-box">Load testing</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-sm text-gray-600">
+                        <strong>Total Phase 4 Steps:</strong> 203 advanced development tasks including third-party integrations, communication systems, analytics, performance optimization, and comprehensive testing.
+                    </div>
+                </div>
+
+                <!-- Development Complexity Summary -->
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-red-800 mb-6 text-center">
+                        <i class="fas fa-exclamation-triangle mr-3 text-3xl"></i>Total Development Complexity
+                    </h3>
+
+                    <!-- Total Steps Visual -->
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-red-600 text-white px-8 py-4 rounded-full">
+                            <div class="text-4xl font-bold">569+</div>
+                            <div class="text-sm uppercase tracking-wide">Total Development Steps</div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-white p-6 rounded-lg border border-red-100 shadow-sm">
+                            <h4 class="font-bold text-red-700 mb-4 text-lg flex items-center">
+                                <i class="fas fa-list-ol mr-2"></i>Phase Breakdown
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                                    <span class="font-medium">Phase 1 (Foundation)</span>
+                                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">83 steps</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                                    <span class="font-medium">Phase 2 (Core Features)</span>
+                                    <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">127 steps</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-orange-50 rounded">
+                                    <span class="font-medium">Phase 3 (HIPAA Compliance)</span>
+                                    <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold">156 steps</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-purple-50 rounded">
+                                    <span class="font-medium">Phase 4 (Advanced Features)</span>
+                                    <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">203 steps</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg border border-red-100 shadow-sm">
+                            <h4 class="font-bold text-red-700 mb-4 text-lg flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>Complexity Multipliers
+                            </h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-red-50 to-red-100 rounded">
+                                    <span class="font-medium">Multi-tenancy</span>
+                                    <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">+40%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded">
+                                    <span class="font-medium">HIPAA Compliance</span>
+                                    <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">+60%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded">
+                                    <span class="font-medium">Real-time Features</span>
+                                    <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">+30%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded">
+                                    <span class="font-medium">Mobile Responsiveness</span>
+                                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">+25%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-100 border border-yellow-300 rounded-lg">
+                        <p class="text-yellow-800 text-center font-medium">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            These multipliers compound the base complexity, resulting in an estimated 1,100+ effective development hours for a production-ready platform.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Technical Architecture -->
+        <section id="technical-arch" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-server text-blue-600 mr-3"></i>Technical Architecture
+                </h2>
+
+                <!-- Technology Stack -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Technology Stack Decision Matrix</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-700 mb-2">Frontend</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Next.js 15.5.0</strong>
+                                    <div class="text-xs text-gray-600">Server components, App Router</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>React 19.1.1</strong>
+                                    <div class="text-xs text-gray-600">Latest stable release</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>TailwindCSS 4.1.1</strong>
+                                    <div class="text-xs text-gray-600">Modern styling system</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>TypeScript 5.9.2</strong>
+                                    <div class="text-xs text-gray-600">Type safety & DX</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-700 mb-2">Backend</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Supabase</strong>
+                                    <div class="text-xs text-gray-600">Managed PostgreSQL + Auth</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>PostgreSQL</strong>
+                                    <div class="text-xs text-gray-600">Row-level security for multi-tenancy</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Supabase Edge Functions</strong>
+                                    <div class="text-xs text-gray-600">Serverless API endpoints</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Supabase Storage</strong>
+                                    <div class="text-xs text-gray-600">Encrypted file storage</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-700 mb-2">Integrations</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Stripe</strong>
+                                    <div class="text-xs text-gray-600">Payment processing</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Twilio</strong>
+                                    <div class="text-xs text-gray-600">HIPAA-compliant SMS</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Mailgun</strong>
+                                    <div class="text-xs text-gray-600">BAA-backed email</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>DocuSign</strong>
+                                    <div class="text-xs text-gray-600">E-signature with BAA</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-semibold text-orange-700 mb-2">DevOps</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Vercel</strong>
+                                    <div class="text-xs text-gray-600">Deployment & hosting</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>GitHub Actions</strong>
+                                    <div class="text-xs text-gray-600">CI/CD pipeline</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Vercel Analytics</strong>
+                                    <div class="text-xs text-gray-600">Performance monitoring</div>
+                                </div>
+                                <div class="bg-white p-2 rounded">
+                                    <strong>Sentry</strong>
+                                    <div class="text-xs text-gray-600">Error tracking</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-tenant Architecture -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Multi-tenant Architecture Implementation</h3>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-indigo-600 mb-3">Database Level Isolation</h4>
+                                <div class="bg-gray-100 p-3 rounded text-xs font-mono mb-3">
+                                    <div class="text-green-600">-- Row Level Security Policy</div>
+                                    <div>CREATE POLICY "tenant_isolation"</div>
+                                    <div>ON appointments FOR ALL</div>
+                                    <div>USING (tenant_id = current_setting</div>
+                                    <div>('app.tenant_id')::uuid);</div>
+                                </div>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• PostgreSQL RLS for data isolation</li>
+                                    <li>• Tenant-scoped database queries</li>
+                                    <li>• Automatic tenant_id injection</li>
+                                    <li>• Cross-tenant data prevention</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-4 rounded border">
+                                <h4 class="font-semibold text-teal-600 mb-3">Application Level Controls</h4>
+                                <div class="bg-gray-100 p-3 rounded text-xs font-mono mb-3">
+                                    <div class="text-green-600">// Middleware tenant resolution</div>
+                                    <div>export function middleware(req) {</div>
+                                    <div>  const tenantId = extractTenant(req);</div>
+                                    <div>  req.headers.set('x-tenant-id', tenantId);</div>
+                                    <div>}</div>
+                                </div>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Subdomain-based tenant routing</li>
+                                    <li>• Middleware tenant resolution</li>
+                                    <li>• Context propagation to APIs</li>
+                                    <li>• UI tenant-aware rendering</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Architecture Diagram -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">System Architecture Overview</h3>
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg">
+                        <div class="grid md:grid-cols-5 gap-4 items-center">
+                            <!-- User Layer -->
+                            <div class="text-center">
+                                <div class="bg-blue-500 p-4 rounded-lg mb-2">
+                                    <i class="fas fa-users text-white text-2xl"></i>
+                                </div>
+                                <div class="text-sm font-medium">Users</div>
+                                <div class="text-xs text-gray-600">Web • Mobile • Tablet</div>
+                            </div>
+
+                            <div class="text-center">
+                                <i class="fas fa-arrow-right text-gray-400 text-xl"></i>
+                            </div>
+
+                            <!-- Frontend Layer -->
+                            <div class="text-center">
+                                <div class="bg-green-500 p-4 rounded-lg mb-2">
+                                    <i class="fab fa-react text-white text-2xl"></i>
+                                </div>
+                                <div class="text-sm font-medium">Next.js App</div>
+                                <div class="text-xs text-gray-600">React • TypeScript • Tailwind</div>
+                            </div>
+
+                            <div class="text-center">
+                                <i class="fas fa-arrow-right text-gray-400 text-xl"></i>
+                            </div>
+
+                            <!-- Backend Layer -->
+                            <div class="text-center">
+                                <div class="bg-purple-500 p-4 rounded-lg mb-2">
+                                    <i class="fas fa-database text-white text-2xl"></i>
+                                </div>
+                                <div class="text-sm font-medium">Supabase</div>
+                                <div class="text-xs text-gray-600">PostgreSQL • Auth • Storage</div>
+                            </div>
+                        </div>
+
+                        <!-- Integration Layer -->
+                        <div class="mt-6 pt-6 border-t border-blue-200">
+                            <div class="text-center mb-4">
+                                <div class="text-sm font-medium text-gray-700">Third-Party Integrations</div>
+                            </div>
+                            <div class="grid grid-cols-4 gap-4 text-center">
+                                <div class="bg-white p-3 rounded">
+                                    <i class="fab fa-stripe text-blue-500 text-xl mb-1"></i>
+                                    <div class="text-xs font-medium">Stripe</div>
+                                    <div class="text-xs text-gray-500">Payments</div>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <i class="fas fa-sms text-green-500 text-xl mb-1"></i>
+                                    <div class="text-xs font-medium">Twilio</div>
+                                    <div class="text-xs text-gray-500">SMS</div>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <i class="fas fa-envelope text-red-500 text-xl mb-1"></i>
+                                    <div class="text-xs font-medium">Mailgun</div>
+                                    <div class="text-xs text-gray-500">Email</div>
+                                </div>
+                                <div class="bg-white p-3 rounded">
+                                    <i class="fas fa-file-signature text-purple-500 text-xl mb-1"></i>
+                                    <div class="text-xs font-medium">DocuSign</div>
+                                    <div class="text-xs text-gray-500">E-sign</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance & Scalability -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Performance & Scalability Considerations</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-green-50 p-4 rounded-lg border">
+                            <h4 class="font-semibold text-green-700 mb-2">
+                                <i class="fas fa-tachometer-alt mr-2"></i>Performance Optimization
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Next.js server-side rendering</li>
+                                <li>• Image optimization & lazy loading</li>
+                                <li>• Database query optimization</li>
+                                <li>• CDN for static assets</li>
+                                <li>• Code splitting & tree shaking</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border">
+                            <h4 class="font-semibold text-blue-700 mb-2">
+                                <i class="fas fa-expand-arrows-alt mr-2"></i>Scalability Strategy
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Horizontal database scaling</li>
+                                <li>• Supabase connection pooling</li>
+                                <li>• Edge function deployment</li>
+                                <li>• Multi-region redundancy</li>
+                                <li>• Auto-scaling infrastructure</li>
+                            </ul>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border">
+                            <h4 class="font-semibold text-purple-700 mb-2">
+                                <i class="fas fa-chart-line mr-2"></i>Monitoring & Analytics
+                            </h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Real-time performance monitoring</li>
+                                <li>• User behavior analytics</li>
+                                <li>• Error tracking & alerting</li>
+                                <li>• Database performance metrics</li>
+                                <li>• Compliance audit logging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIPAA Compliance -->
+        <section id="compliance" class="mb-12">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-shield-alt text-blue-600 mr-3"></i>HIPAA Compliance Framework
+                </h2>
+
+                <div class="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                    <p class="text-red-800">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        <strong>Critical Requirement:</strong> HIPAA compliance is not optional for medical spas handling protected health information (PHI). Violations can result in fines ranging from $100,000 to $1.5 million per incident.
+                    </p>
+                </div>
+
+                <!-- HIPAA Safeguards -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-lg font-semibold text-blue-800 mb-4">
+                            <i class="fas fa-user-shield mr-2"></i>Administrative Safeguards
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Security Officer Assignment</strong>
+                                    <div class="text-gray-600">Designated HIPAA compliance officer for each tenant</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Workforce Training</strong>
+                                    <div class="text-gray-600">Built-in compliance training modules and tracking</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Access Management</strong>
+                                    <div class="text-gray-600">Role-based permissions and regular access reviews</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Incident Response</strong>
+                                    <div class="text-gray-600">Automated breach detection and response procedures</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                        <h3 class="text-lg font-semibold text-green-800 mb-4">
+                            <i class="fas fa-laptop mr-2"></i>Technical Safeguards
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Access Control</strong>
+                                    <div class="text-gray-600">Unique user identification and automatic logoff</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Audit Controls</strong>
+                                    <div class="text-gray-600">Comprehensive logging of PHI access and modifications</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Integrity Controls</strong>
+                                    <div class="text-gray-600">Checksums and digital signatures for data integrity</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Transmission Security</strong>
+                                    <div class="text-gray-600">End-to-end encryption for all data in transit</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                        <h3 class="text-lg font-semibold text-orange-800 mb-4">
+                            <i class="fas fa-building mr-2"></i>Physical Safeguards
+                        </h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Facility Access Controls</strong>
+                                    <div class="text-gray-600">Guidance for physical security best practices</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Workstation Use</strong>
+                                    <div class="text-gray-600">Security requirements for devices accessing PHI</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Device Controls</strong>
+                                    <div class="text-gray-600">Mobile device management and encryption requirements</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <div>
+                                    <strong>Media Controls</strong>
+                                    <div class="text-gray-600">Secure disposal and transfer of electronic media</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compliance Implementation -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">OmniLux HIPAA Implementation</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-gray-800 mb-3">Automated Compliance Features</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-eye text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-sm">Real-time Audit Logging</div>
+                                        <div class="text-xs text-gray-600">Every PHI access automatically logged with user, timestamp, and action</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-lock text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-sm">Automatic Encryption</div>
+                                        <div class="text-xs text-gray-600">AES-256 encryption for all PHI at rest and TLS 1.3 in transit</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-user-times text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-sm">Access Timeout</div>
+                                        <div class="text-xs text-gray-600">Automatic session expiration and secure logout</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
+                                        <i class="fas fa-exclamation text-white text-sm"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-medium text-sm">Violation Detection</div>
+                                        <div class="text-xs text-gray-600">Automated alerts for potential compliance violations</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-lg border border-green-200">
+                            <h4 class="font-bold text-gray-800 mb-4 text-lg flex items-center">
+                                <i class="fas fa-handshake mr-2 text-green-600"></i>Business Associate Agreements
+                            </h4>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
+                                                <i class="fas fa-database text-white"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">Supabase</div>
+                                                <div class="text-sm text-gray-600">Database & Auth</div>
+                                            </div>
+                                        </div>
+                                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                            <i class="fas fa-check mr-1"></i>BAA Available
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
+                                                <i class="fas fa-sms text-white"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">Twilio</div>
+                                                <div class="text-sm text-gray-600">HIPAA SMS</div>
+                                            </div>
+                                        </div>
+                                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                            <i class="fas fa-check mr-1"></i>BAA Available
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mr-3">
+                                                <i class="fas fa-envelope text-white"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">Mailgun</div>
+                                                <div class="text-sm text-gray-600">Email Service</div>
+                                            </div>
+                                        </div>
+                                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                            <i class="fas fa-check mr-1"></i>BAA Available
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center mr-3">
+                                                <i class="fas fa-file-signature text-white"></i>
+                                            </div>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">DocuSign</div>
+                                                <div class="text-sm text-gray-600">E-signature</div>
+                                            </div>
+                                        </div>
+                                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                                            <i class="fas fa-check mr-1"></i>BAA Available
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 p-3 bg-green-100 border border-green-300 rounded-lg">
+                                <p class="text-green-800 text-sm text-center">
+                                    <i class="fas fa-shield-alt mr-2"></i>
+                                    All core integrations include Business Associate Agreements for HIPAA compliance
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-600 text-sm mt-16 p-8 bg-gray-100 rounded-lg">
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">OmniLux CRM - Dynamic Duo Development Plan</h3>
+                <p class="text-gray-600">Complete roadmap for building a HIPAA-compliant, multi-tenant medical spa management platform</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 text-xs">
+                <div>
+                    <strong>Market Analysis:</strong> Based on verified AmSpa 2024 data showing 10,488 medical spas with average revenue of $1.4M annually
+                </div>
+                <div>
+                    <strong>Technical Stack:</strong> Next.js 15 + React 19 + Supabase + TypeScript for modern, scalable architecture
+                </div>
+                <div>
+                    <strong>Compliance:</strong> Built-in HIPAA compliance with automated audit trails, encryption, and BAA management
+                </div>
+            </div>
+            <div class="mt-4 pt-4 py-7 p-5 border-t border-gray-300">
+                <p>The OmniLux CRM Development Plan is a Private Document Written Solely for the "OmniLux CRM" Team of Professionals. </p> <b>- Written | Researched | Devloped by Luccas A Eastman -</b>
+                <p>&copy; 2025 OmniLux CRM Development Plan. All market data sourced from official industry reports.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
