@@ -11,42 +11,47 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
-        /* Responsive wireframe boxes */
+        /* Base responsive wireframe boxes */
         .wireframe-box {
             border: 2px dashed #6b7280;
             background: #f9fafb;
-            min-height: 60px;
+            min-height: clamp(50px, 8vw, 60px);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(0.75rem, 2vw, 0.875rem);
+            font-size: clamp(0.75rem, 2.5vw, 0.875rem);
             color: #6b7280;
-            padding: 0.75rem;
+            padding: clamp(0.5rem, 2vw, 0.75rem);
             text-align: center;
+            word-wrap: break-word;
         }
         
-        /* Dashboard mockup with responsive styling */
+        /* Dashboard mockup with full responsive design */
         .dashboard-mockup {
             border: 1px solid #e5e7eb;
-            border-radius: 8px;
+            border-radius: clamp(6px, 1vw, 8px);
             background: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             overflow: hidden;
+            width: 100%;
         }
         
-        /* Navigation items with mobile-friendly touch targets */
+        /* Navigation items optimized for all screen sizes */
         .nav-item {
-            padding: clamp(0.625rem, 2vw, 0.75rem) clamp(0.875rem, 3vw, 1rem);
+            padding: clamp(0.5rem, 2.5vw, 0.75rem) clamp(0.75rem, 3vw, 1rem);
             border-radius: 6px;
-            transition: all 0.2s;
+            transition: all 0.2s ease;
             cursor: pointer;
             min-height: 44px;
             display: flex;
             align-items: center;
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
+            touch-action: manipulation;
         }
         
         .nav-item:hover {
             background: #f3f4f6;
+            transform: translateX(2px);
         }
         
         .nav-item.active {
@@ -54,58 +59,104 @@
             color: white;
         }
         
-        /* Feature cards with responsive spacing */
+        /* Feature cards with enhanced responsive behavior */
         .feature-card {
             border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            padding: clamp(1rem, 3vw, 1.25rem);
+            border-radius: clamp(6px, 1vw, 8px);
+            padding: clamp(1rem, 4vw, 1.5rem);
             background: white;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .feature-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
         }
         
-        /* Step boxes with responsive text */
+        /* Step boxes with improved mobile handling */
         .step-box {
             background: #f0f9ff;
             border: 1px solid #0ea5e9;
             border-radius: 6px;
-            padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(0.625rem, 2vw, 0.75rem);
-            margin: 4px;
-            font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+            padding: clamp(0.25rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 0.75rem);
+            margin: clamp(2px, 0.5vw, 4px);
+            font-size: clamp(0.625rem, 1.8vw, 0.75rem);
             display: inline-block;
             word-break: break-word;
+            line-height: 1.3;
         }
         
-        /* Phase containers with responsive padding */
+        /* Phase containers with better spacing */
         .phase-container {
             background: #fafafa;
             border-left: 4px solid #3b82f6;
-            padding: clamp(1rem, 3vw, 1.25rem);
+            padding: clamp(1rem, 4vw, 1.5rem);
             margin: clamp(0.75rem, 2vw, 1rem) 0;
+            border-radius: 0 8px 8px 0;
         }
         
-        /* Mobile-specific optimizations */
-        @media (max-width: 640px) {
+        /* Mobile-first responsive breakpoints */
+        @media (max-width: 480px) {
             .wireframe-box {
-                min-height: 50px;
+                min-height: 45px;
+                font-size: 0.75rem;
             }
             
             .nav-item {
-                font-size: 0.875rem;
+                font-size: 0.8rem;
+                padding: 0.5rem 0.75rem;
             }
             
             .feature-card {
-                margin-bottom: 0.75rem;
+                margin-bottom: 1rem;
+                padding: 1rem;
             }
             
             .step-box {
                 display: block;
                 width: 100%;
                 margin: 0.25rem 0;
+                text-align: center;
+            }
+            
+            .dashboard-mockup .flex {
+                flex-direction: column;
+            }
+            
+            .dashboard-mockup .w-64 {
+                width: 100%;
+                order: 2;
+            }
+            
+            .dashboard-mockup .flex-1 {
+                order: 1;
+            }
+        }
+        
+        /* Small mobile devices */
+        @media (max-width: 640px) {
+            .grid.md\\:grid-cols-2,
+            .grid.md\\:grid-cols-3,
+            .grid.md\\:grid-cols-4,
+            .grid.lg\\:grid-cols-3,
+            .grid.lg\\:grid-cols-4 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .text-4xl {
+                font-size: 2rem;
+            }
+            
+            .text-3xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem;
             }
         }
         
@@ -113,18 +164,80 @@
         @media (min-width: 641px) and (max-width: 1024px) {
             .wireframe-box {
                 padding: 1rem;
+                min-height: 55px;
             }
             
             .feature-card {
-                padding: 1.125rem;
+                padding: 1.25rem;
+            }
+            
+            .step-box {
+                font-size: 0.7rem;
+            }
+            
+            .grid.md\\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid.lg\\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Large tablet and small desktop */
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .dashboard-mockup {
+                max-width: 100%;
+            }
+            
+            .grid.lg\\:grid-cols-4 {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
         /* Desktop optimizations */
-        @media (min-width: 1025px) {
+        @media (min-width: 1281px) {
             .dashboard-mockup {
                 max-width: 1400px;
                 margin: 0 auto;
+            }
+            
+            .container {
+                max-width: 1400px;
+            }
+        }
+        
+        /* Large desktop screens */
+        @media (min-width: 1536px) {
+            .max-w-7xl {
+                max-width: 1600px;
+            }
+        }
+        
+        /* Touch-friendly enhancements */
+        @media (pointer: coarse) {
+            .nav-item,
+            button,
+            a,
+            .feature-card {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .step-box {
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        /* High DPI screen optimizations */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .wireframe-box,
+            .feature-card,
+            .dashboard-mockup {
+                border-width: 0.5px;
             }
         }
         
@@ -133,9 +246,48 @@
             body { 
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
+                font-size: 12px;
             }
             .no-print { 
                 display: none !important; 
+            }
+            .feature-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .phase-container {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            .nav-item,
+            .feature-card {
+                transition: none;
+            }
+            
+            .nav-item:hover {
+                transform: none;
+            }
+            
+            .feature-card:hover {
+                transform: none;
+            }
+        }
+        
+        /* Dark mode support (if needed) */
+        @media (prefers-color-scheme: dark) {
+            .dashboard-mockup {
+                background: #1f2937;
+                border-color: #374151;
+            }
+            
+            .wireframe-box {
+                background: #374151;
+                border-color: #4b5563;
+                color: #d1d5db;
             }
         }
         
@@ -146,22 +298,14 @@
         
         /* Enhanced focus states for accessibility */
         a:focus,
-        button:focus {
+        button:focus,
+        .nav-item:focus {
             outline: 2px solid #3b82f6;
             outline-offset: 2px;
+            border-radius: 4px;
         }
         
-        /* Touch-friendly tap targets */
-        @media (pointer: coarse) {
-            .nav-item,
-            button,
-            a {
-                min-height: 44px;
-                min-width: 44px;
-            }
-        }
-        
-        /* Prevent horizontal scroll on mobile */
+        /* Prevent horizontal scroll on all devices */
         body {
             overflow-x: hidden;
         }
@@ -172,22 +316,84 @@
             height: auto;
             display: block;
         }
+        
+        /* Container max-width adjustments for different screens */
+        .max-w-7xl {
+            max-width: min(80rem, calc(100vw - 2rem));
+        }
+        
+        /* Table responsiveness */
+        .overflow-x-auto {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        @media (max-width: 768px) {
+            table {
+                font-size: 0.75rem;
+            }
+            
+            th, td {
+                padding: 0.5rem 0.25rem;
+            }
+        }
+        
+        /* Grid responsiveness improvements */
+        .grid {
+            gap: clamp(0.5rem, 2vw, 1.5rem);
+        }
+        
+        /* Flexible spacing utilities */
+        .responsive-padding {
+            padding: clamp(1rem, 4vw, 2rem);
+        }
+        
+        .responsive-margin {
+            margin: clamp(0.5rem, 2vw, 1rem);
+        }
+        
+        /* Enhanced button touch targets */
+        button {
+            min-height: 44px;
+            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1rem);
+        }
+        
+        /* Improved text scaling */
+        .text-responsive {
+            font-size: clamp(0.875rem, 2.5vw, 1rem);
+            line-height: 1.5;
+        }
+        
+        /* Loading states and performance */
+        img {
+            loading: lazy;
+        }
+        
+        /* Optimize for different orientation changes */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .dashboard-mockup {
+                font-size: 0.8rem;
+            }
+            
+            .phase-container {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 leading-relaxed">
     <!-- Skip navigation for accessibility -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50">Skip to main content</a>
 
-    <div class="max-w-7xl mx-auto p-8" id="main-content">
+    <div class="max-w-7xl mx-auto responsive-padding" id="main-content">
 
         <!-- Header -->
-        <header class="text-center mb-12 bg-white p-8 rounded-lg shadow-sm">
+        <header class="text-center mb-12 bg-white responsive-padding rounded-lg shadow-sm">
             <h1 class="text-4xl font-bold text-blue-600 mb-4">
                 <i class="fas fa-spa mr-3"></i>OmniLux CRM
             </h1>
             <h2 class="text-2xl text-gray-700 mb-2">Dynamic Duo Development Roadmap</h2>
             <p class="text-lg text-gray-600">Complete Wireframes, Feature Showcase & Market Analysis</p>
-            <div class="mt-4 flex justify-center space-x-6 text-sm text-gray-500">
+            <div class="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-500">
                 <span><i class="fas fa-calendar-alt mr-1"></i>Updated: August 2025</span>
                 <span><i class="fas fa-users mr-1"></i>Dynamic Duo Team</span>
                 <span><i class="fas fa-shield-alt mr-1"></i>HIPAA Compliant</span>
@@ -195,7 +401,7 @@
         </header>
 
         <!-- Table of Contents -->
-        <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+        <div class="bg-white responsive-padding rounded-lg shadow-sm mb-8">
             <h3 class="text-xl font-semibold mb-4">Table of Contents</h3>
             <div class="grid md:grid-cols-2 gap-4 text-sm">
                 <div>
@@ -218,66 +424,65 @@
 
         <!-- Market Analysis Section -->
         <section id="market-analysis" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-chart-line text-blue-600 mr-3"></i>Verified Market Analysis
                 </h2>
 
-                <div class="bold grid lg:grid-cols-2 gap-8 mb-8">
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
                     <!-- Medical Spa Market -->
-                        <div class="bold grid lg:grid-cols-2 gap-8 mb-8">
-        <!-- Medical Spa Market -->
-        <div class="bg-blue-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-blue-800 mb-4">Medical Spa Market (AmSpa 2025)</h3>
-            <div class="space-y-8">
-                <div class="flex justify-between">
-                    <span class="text-gray-700">Total Locations:</span>
-                    <span class="font-semibold">11,553 medspas (projected 2025)</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-700">Average Revenue:</span>
-                    <span class="font-semibold">$2,000,000/year</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-700">Growth Rate:</span>
-                    <span class="font-semibold text-green-600">+15.7% CAGR (2025-2033)</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-700">Patient Demographics:</span>
-                    <span class="font-semibold">~80% female, majority younger adults</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-gray-700">Repeat Patients:</span>
-                    <span class="font-semibold">Consistently >70%</span>
-                </div>
-            </div>
-        </div>
+                    <div class="bg-blue-50 responsive-padding rounded-lg">
+                        <h3 class="text-xl font-semibold text-blue-800 mb-4">Medical Spa Market (AmSpa 2025)</h3>
+                        <div class="space-y-8">
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Total Locations:</span>
+                                <span class="font-semibold">11,553 medspas (projected 2025)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Average Revenue:</span>
+                                <span class="font-semibold">$2,000,000/year</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Growth Rate:</span>
+                                <span class="font-semibold text-green-600">+15.7% CAGR (2025-2033)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Patient Demographics:</span>
+                                <span class="font-semibold">~80% female, majority younger adults</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">Repeat Patients:</span>
+                                <span class="font-semibold">Consistently >70%</span>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- Competitive Landscape -->
-        <div class="bg-green-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-green-800 mb-4">Competitive Analysis</h3>
-            <div class="space-y-3">
-                <div class="border-b border-green-200 pb-2">
-                    <div class="font-medium">Boulevard.io</div>
-                    <div class="text-sm text-gray-600">$162.4M revenue, 420 employees (2025)</div>
+                    <!-- Competitive Landscape -->
+                    <div class="bg-green-50 responsive-padding rounded-lg">
+                        <h3 class="text-xl font-semibold text-green-800 mb-4">Competitive Analysis</h3>
+                        <div class="space-y-3">
+                            <div class="border-b border-green-200 pb-2">
+                                <div class="font-medium">Boulevard.io</div>
+                                <div class="text-sm text-gray-600">$162.4M revenue, 420 employees (2025)</div>
+                            </div>
+                            <div class="border-b border-green-200 pb-2">
+                                <div class="font-medium">Market Gap</div>
+                                <div class="text-sm text-gray-600">HIPAA compliance: major challenge & priority for medspa software as 2025 brings new requirements; many platforms not fully compliant</div>
+                            </div>
+                            <div class="border-b border-green-200 pb-2">
+                                <div class="font-medium">Pricing Opportunity</div>
+                                <div class="text-sm text-gray-600">Current premium competitors pricing: $245–$425/month. SaaS offerings 20–30% below this range can undercut market leaders.</div>
+                            </div>
+                            <div>
+                                <div class="font-medium">Technology Gap</div>
+                                <div class="text-sm text-gray-600">Many medspas still use Excel, paper, or non-integrated legacy systems despite industry-wide push for modernization and AI-powered upgrade options.</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="border-b border-green-200 pb-2">
-                    <div class="font-medium">Market Gap</div>
-                    <div class="text-sm text-gray-600">HIPAA compliance: major challenge & priority for medspa software as 2025 brings new requirements; many platforms not fully compliant</div>
-                </div>
-                <div class="border-b border-green-200 pb-2">
-                    <div class="font-medium">Pricing Opportunity</div>
-                    <div class="text-sm text-gray-600">Current premium competitors pricing: $245–$425/month. SaaS offerings 20–30% below this range can undercut market leaders.</div>
-                </div>
-                <div>
-                    <div class="font-medium">Technology Gap</div>
-                    <div class="text-sm text-gray-600">Many medspas still use Excel, paper, or non-integrated legacy systems despite industry-wide push for modernization and AI-powered upgrade options.</div>
-                </div>
-            </div>
-        </div>
-    </div>
+                
                 <!-- Market Segments -->
-                <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="bg-gray-50 responsive-padding rounded-lg">
                     <h3 class="text-2xl font-semibold text-gray-800 mb-4">Target Market Segments</h3>
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="text-center">
@@ -302,7 +507,7 @@
 
         <!-- Wireframes & Dashboard Design -->
         <section id="wireframes" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-drafting-compass text-blue-600 mr-3"></i>Wireframes & Dashboard Design
                 </h2>
@@ -310,9 +515,9 @@
                 <!-- Dashboard Layout Overview -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Main Dashboard Layout: Example Concept - Mock Up</h3>
-                    <div class="dashboard-mockup p-4">
+                    <div class="dashboard-mockup responsive-padding">
                         <!-- Top Navigation Bar -->
-                        <div class="bg-blue-600 text-white p-3 rounded-t-lg flex justify-between items-center">
+                        <div class="bg-blue-600 text-white responsive-padding rounded-t-lg flex justify-between items-center">
                             <div class="flex items-center">
                                 <i class="fas fa-spa mr-2"></i>
                                 <span class="font-semibold">OmniLux CRM</span>
@@ -320,14 +525,14 @@
                             <div class="flex items-center space-x-4">
                                 <i class="fas fa-bell"></i>
                                 <i class="fas fa-user-circle"></i>
-                                <span class="text-sm">Sarah Martinez</span>
+                                <span class="text-sm hidden sm:inline">Sarah Martinez</span>
                             </div>
                         </div>
 
                         <!-- Main Content Area -->
-                        <div class="flex">
+                        <div class="flex flex-col md:flex-row">
                             <!-- Sidebar Navigation -->
-                            <div class="w-64 bg-gray-50 p-4 border-r">
+                            <div class="w-full md:w-64 bg-gray-50 responsive-padding border-r">
                                 <nav class="space-y-2">
                                     <div class="nav-item active">
                                         <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
@@ -354,10 +559,10 @@
                             </div>
 
                             <!-- Main Dashboard Content -->
-                            <div class="flex-1 p-6">
+                            <div class="flex-1 responsive-padding">
                                 <!-- KPI Cards -->
-                                <div class="grid md:grid-cols-4 gap-4 mb-6">
-                                    <div class="bg-blue-50 p-4 rounded-lg">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                                    <div class="bg-blue-50 responsive-padding rounded-lg">
                                         <div class="flex items-center">
                                             <div class="bg-blue-500 p-2 rounded">
                                                 <i class="fas fa-calendar text-white"></i>
@@ -368,7 +573,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-green-50 p-4 rounded-lg">
+                                    <div class="bg-green-50 responsive-padding rounded-lg">
                                         <div class="flex items-center">
                                             <div class="bg-green-500 p-2 rounded">
                                                 <i class="fas fa-dollar-sign text-white"></i>
@@ -379,7 +584,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-purple-50 p-4 rounded-lg">
+                                    <div class="bg-purple-50 responsive-padding rounded-lg">
                                         <div class="flex items-center">
                                             <div class="bg-purple-500 p-2 rounded">
                                                 <i class="fas fa-user-plus text-white"></i>
@@ -390,7 +595,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bg-orange-50 p-4 rounded-lg">
+                                    <div class="bg-orange-50 responsive-padding rounded-lg">
                                         <div class="flex items-center">
                                             <div class="bg-orange-500 p-2 rounded">
                                                 <i class="fas fa-exclamation-triangle text-white"></i>
@@ -405,7 +610,7 @@
 
                                 <!-- Quick Actions & Recent Activity -->
                                 <div class="grid md:grid-cols-2 gap-6">
-                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="bg-gray-50 responsive-padding rounded-lg">
                                         <h4 class="font-semibold mb-3">Quick Actions</h4>
                                         <div class="space-y-2">
                                             <button class="w-full bg-blue-600 text-white p-2 rounded text-sm">
@@ -419,7 +624,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="bg-gray-50 responsive-padding rounded-lg">
                                         <h4 class="font-semibold mb-3">Recent Activity</h4>
                                         <div class="space-y-2 text-sm">
                                             <div class="flex justify-between">
@@ -447,18 +652,18 @@
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Mobile Dashboard Design: Example Concept - Mock Up</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Mobile Home Screen -->
-                        <div class="dashboard-mockup p-4 max-w-sm mx-auto">
-                            <div class="bg-blue-600 text-white p-3 rounded-t-lg text-center">
+                        <div class="dashboard-mockup responsive-padding max-w-sm mx-auto">
+                            <div class="bg-blue-600 text-white responsive-padding rounded-t-lg text-center">
                                 <span class="font-semibold">OmniLux Mobile</span>
                             </div>
-                            <div class="p-4">
+                            <div class="responsive-padding">
                                 <!-- Mobile KPIs -->
                                 <div class="grid grid-cols-2 gap-3 mb-4">
-                                    <div class="bg-blue-50 p-3 rounded text-center">
+                                    <div class="bg-blue-50 responsive-padding rounded text-center">
                                         <div class="text-lg font-bold text-blue-600">24</div>
                                         <div class="text-xs text-gray-600">Today's Appts</div>
                                     </div>
-                                    <div class="bg-green-50 p-3 rounded text-center">
+                                    <div class="bg-green-50 responsive-padding rounded text-center">
                                         <div class="text-lg font-bold text-green-600">$3,847</div>
                                         <div class="text-xs text-gray-600">Revenue</div>
                                     </div>
@@ -497,25 +702,25 @@
                         </div>
 
                         <!-- Mobile Appointment View -->
-                        <div class="dashboard-mockup p-4 max-w-sm mx-auto">
-                            <div class="bg-green-600 text-white p-3 rounded-t-lg flex justify-between items-center">
+                        <div class="dashboard-mockup responsive-padding max-w-sm mx-auto">
+                            <div class="bg-green-600 text-white responsive-padding rounded-t-lg flex justify-between items-center">
                                 <i class="fas fa-arrow-left"></i>
                                 <span class="font-semibold">Today's Schedule</span>
                                 <i class="fas fa-plus"></i>
                             </div>
-                            <div class="p-4">
+                            <div class="responsive-padding">
                                 <div class="space-y-3">
-                                    <div class="bg-blue-50 p-3 rounded border-l-4 border-blue-500">
+                                    <div class="bg-blue-50 responsive-padding rounded border-l-4 border-blue-500">
                                         <div class="font-medium text-sm">9:00 AM - Botox Consultation</div>
                                         <div class="text-xs text-gray-600">Sarah Johnson</div>
                                         <div class="text-xs text-blue-600 mt-1">Check-in Ready</div>
                                     </div>
-                                    <div class="bg-gray-50 p-3 rounded border-l-4 border-gray-300">
+                                    <div class="bg-gray-50 responsive-padding rounded border-l-4 border-gray-300">
                                         <div class="font-medium text-sm">10:30 AM - Facial Treatment</div>
                                         <div class="text-xs text-gray-600">Emma Wilson</div>
                                         <div class="text-xs text-gray-600 mt-1">Scheduled</div>
                                     </div>
-                                    <div class="bg-green-50 p-3 rounded border-l-4 border-green-500">
+                                    <div class="bg-green-50 responsive-padding rounded border-l-4 border-green-500">
                                         <div class="font-medium text-sm">2:00 PM - Follow-up Visit</div>
                                         <div class="text-xs text-gray-600">Michael Chen</div>
                                         <div class="text-xs text-green-600 mt-1">Completed</div>
@@ -529,13 +734,13 @@
                 <!-- Client Management Wireframe -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Client Management Interface: Example Concept - Mock Up</h3>
-                    <div class="dashboard-mockup p-4">
+                    <div class="dashboard-mockup responsive-padding">
                         <!-- Client List Header -->
-                        <div class="flex justify-between items-center mb-4">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-4">
                             <h4 class="text-lg font-semibold">Client Management</h4>
-                            <div class="flex space-x-2">
-                                <input type="text" placeholder="Search clients..." class="border px-3 py-1 rounded text-sm">
-                                <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm">
+                            <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
+                                <input type="text" placeholder="Search clients..." class="border px-3 py-1 rounded text-sm w-full sm:w-auto">
+                                <button class="bg-blue-600 text-white px-3 py-1 rounded text-sm whitespace-nowrap">
                                     <i class="fas fa-plus mr-1"></i>Add Client
                                 </button>
                             </div>
@@ -543,14 +748,14 @@
 
                         <!-- Client Cards -->
                         <div class="grid md:grid-cols-3 gap-4">
-                            <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <div class="border rounded-lg responsive-padding hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                                         SJ
                                     </div>
-                                    <div class="ml-3">
-                                        <div class="font-medium">Sarah Johnson</div>
-                                        <div class="text-sm text-gray-600">sarah.j@email.com</div>
+                                    <div class="ml-3 min-w-0">
+                                        <div class="font-medium truncate">Sarah Johnson</div>
+                                        <div class="text-sm text-gray-600 truncate">sarah.j@email.com</div>
                                     </div>
                                 </div>
                                 <div class="text-sm text-gray-600 space-y-1">
@@ -558,20 +763,20 @@
                                     <div><i class="fas fa-dollar-sign mr-2"></i>Total Spent: $2,847</div>
                                     <div><i class="fas fa-user-check mr-2"></i>Treatments: 12</div>
                                 </div>
-                                <div class="mt-3 flex space-x-2">
+                                <div class="mt-3 flex flex-wrap gap-2">
                                     <button class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">View Profile</button>
                                     <button class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Book Appointment</button>
                                 </div>
                             </div>
 
-                            <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <div class="border rounded-lg responsive-padding hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                                         EW
                                     </div>
-                                    <div class="ml-3">
-                                        <div class="font-medium">Emma Wilson</div>
-                                        <div class="text-sm text-gray-600">emma.w@email.com</div>
+                                    <div class="ml-3 min-w-0">
+                                        <div class="font-medium truncate">Emma Wilson</div>
+                                        <div class="text-sm text-gray-600 truncate">emma.w@email.com</div>
                                     </div>
                                 </div>
                                 <div class="text-sm text-gray-600 space-y-1">
@@ -579,20 +784,20 @@
                                     <div><i class="fas fa-dollar-sign mr-2"></i>Total Spent: $1,543</div>
                                     <div><i class="fas fa-user-check mr-2"></i>Treatments: 8</div>
                                 </div>
-                                <div class="mt-3 flex space-x-2">
+                                <div class="mt-3 flex flex-wrap gap-2">
                                     <button class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">View Profile</button>
                                     <button class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Book Appointment</button>
                                 </div>
                             </div>
 
-                            <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <div class="border rounded-lg responsive-padding hover:shadow-md transition-shadow">
                                 <div class="flex items-center mb-2">
-                                    <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                                    <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                                         MC
                                     </div>
-                                    <div class="ml-3">
-                                        <div class="font-medium">Michael Chen</div>
-                                        <div class="text-sm text-gray-600">m.chen@email.com</div>
+                                    <div class="ml-3 min-w-0">
+                                        <div class="font-medium truncate">Michael Chen</div>
+                                        <div class="text-sm text-gray-600 truncate">m.chen@email.com</div>
                                     </div>
                                 </div>
                                 <div class="text-sm text-gray-600 space-y-1">
@@ -600,7 +805,7 @@
                                     <div><i class="fas fa-dollar-sign mr-2"></i>Total Spent: $892</div>
                                     <div><i class="fas fa-user-check mr-2"></i>Treatments: 4</div>
                                 </div>
-                                <div class="mt-3 flex space-x-2">
+                                <div class="mt-3 flex flex-wrap gap-2">
                                     <button class="bg-blue-100 text-blue-600 px-2 py-1 rounded text-xs">View Profile</button>
                                     <button class="bg-green-100 text-green-600 px-2 py-1 rounded text-xs">Book Appointment</button>
                                 </div>
@@ -613,7 +818,7 @@
 
         <!-- Navigation Structure -->
         <section id="navigation" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-sitemap text-blue-600 mr-3"></i>Navigation Structure
                 </h2>
@@ -621,10 +826,10 @@
                 <!-- Information Architecture -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Information Architecture</h3>
-                    <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-gray-50 responsive-padding rounded-lg">
                         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                             <!-- Dashboard Section -->
-                            <div class="bg-white p-4 rounded border">
+                            <div class="bg-white responsive-padding rounded border">
                                 <h4 class="font-semibold text-blue-600 mb-3">
                                     <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
                                 </h4>
@@ -638,7 +843,7 @@
                             </div>
 
                             <!-- Scheduling Section -->
-                            <div class="bg-white p-4 rounded border">
+                            <div class="bg-white responsive-padding rounded border">
                                 <h4 class="font-semibold text-green-600 mb-3">
                                     <i class="fas fa-calendar-alt mr-2"></i>Scheduling
                                 </h4>
@@ -652,7 +857,7 @@
                             </div>
 
                             <!-- Client Management -->
-                            <div class="bg-white p-4 rounded border">
+                            <div class="bg-white responsive-padding rounded border">
                                 <h4 class="font-semibold text-purple-600 mb-3">
                                     <i class="fas fa-users mr-2"></i>Clients
                                 </h4>
@@ -666,7 +871,7 @@
                             </div>
 
                             <!-- Compliance Section -->
-                            <div class="bg-white p-4 rounded border">
+                            <div class="bg-white responsive-padding rounded border">
                                 <h4 class="font-semibold text-orange-600 mb-3">
                                     <i class="fas fa-shield-alt mr-2"></i>Compliance
                                 </h4>
@@ -687,7 +892,7 @@
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Role-Based Navigation Access</h3>
                     <div class="grid md:grid-cols-3 gap-6">
                         <!-- Owner/Admin -->
-                        <div class="bg-red-50 p-4 rounded-lg border">
+                        <div class="bg-red-50 responsive-padding rounded-lg border">
                             <h4 class="font-semibold text-red-700 mb-3">
                                 <i class="fas fa-crown mr-2"></i>Owner/Admin
                             </h4>
@@ -720,7 +925,7 @@
                         </div>
 
                         <!-- Medical Director -->
-                        <div class="bg-blue-50 p-4 rounded-lg border">
+                        <div class="bg-blue-50 responsive-padding rounded-lg border">
                             <h4 class="font-semibold text-blue-700 mb-3">
                                 <i class="fas fa-user-md mr-2"></i>Medical Director
                             </h4>
@@ -753,7 +958,7 @@
                         </div>
 
                         <!-- Front Desk Staff -->
-                        <div class="bg-green-50 p-4 rounded-lg border">
+                        <div class="bg-green-50 responsive-padding rounded-lg border">
                             <h4 class="font-semibold text-green-700 mb-3">
                                 <i class="fas fa-user-tie mr-2"></i>Front Desk Staff
                             </h4>
@@ -787,189 +992,189 @@
                     </div>
                 </div>
 
-              <!-- Navigation Flow Diagram -->
-              <div>
-                  <h3 class="text-xl font-semibold text-gray-700 mb-4">User Navigation Flow</h3>
-                  <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg">
-                      <!-- Desktop/Tablet Flow -->
-                      <div class="hidden md:block">
-                          <!-- Main Flow Row -->
-                          <div class="flex items-center justify-between mb-8">
-                              <!-- Login -->
-                              <div class="bg-white p-4 rounded-lg text-center shadow-sm border-2 border-blue-200 flex-shrink-0">
-                                  <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                                      <i class="fas fa-sign-in-alt text-white"></i>
-                                  </div>
-                                  <div class="text-sm font-semibold text-blue-700">Login</div>
-                                  <div class="text-xs text-gray-600">Secure Access</div>
-                              </div>
+                <!-- Navigation Flow Diagram -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">User Navigation Flow</h3>
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 responsive-padding rounded-lg">
+                        <!-- Desktop/Tablet Flow -->
+                        <div class="hidden md:block">
+                            <!-- Main Flow Row -->
+                            <div class="flex flex-wrap items-center justify-between mb-8 gap-4">
+                                <!-- Login -->
+                                <div class="bg-white responsive-padding rounded-lg text-center shadow-sm border-2 border-blue-200 flex-shrink-0 min-w-0">
+                                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-sign-in-alt text-white"></i>
+                                    </div>
+                                    <div class="text-sm font-semibold text-blue-700">Login</div>
+                                    <div class="text-xs text-gray-600">Secure Access</div>
+                                </div>
 
-                              <!-- Arrow 1 -->
-                              <div class="flex-shrink-0 px-2">
-                                  <i class="fas fa-arrow-right text-blue-400 text-2xl"></i>
-                              </div>
+                                <!-- Arrow 1 -->
+                                <div class="flex-shrink-0 px-2">
+                                    <i class="fas fa-arrow-right text-blue-400 text-2xl"></i>
+                                </div>
 
-                              <!-- Dashboard -->
-                              <div class="bg-white p-4 rounded-lg text-center shadow-sm border-2 border-green-200 flex-shrink-0">
-                                  <div class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                                      <i class="fas fa-tachometer-alt text-white"></i>
-                                  </div>
-                                  <div class="text-sm font-semibold text-green-700">Dashboard</div>
-                                  <div class="text-xs text-gray-600">Main Hub</div>
-                              </div>
+                                <!-- Dashboard -->
+                                <div class="bg-white responsive-padding rounded-lg text-center shadow-sm border-2 border-green-200 flex-shrink-0 min-w-0">
+                                    <div class="w-12 h-12 bg-gray-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-tachometer-alt text-white"></i>
+                                    </div>
+                                    <div class="text-sm font-semibold text-green-700">Dashboard</div>
+                                    <div class="text-xs text-gray-600">Main Hub</div>
+                                </div>
 
-                              <!-- Arrow 2 -->
-                              <div class="flex-shrink-0 px-2">
-                                  <i class="fas fa-arrow-right text-green-400 text-2xl"></i>
-                              </div>
+                                <!-- Arrow 2 -->
+                                <div class="flex-shrink-0 px-2">
+                                    <i class="fas fa-arrow-right text-green-400 text-2xl"></i>
+                                </div>
 
-                              <!-- Action Selection -->
-                              <div class="bg-white p-4 rounded-lg border-2 border-purple-200 shadow-sm flex-shrink-0 min-w-0">
-                                  <div class="text-sm font-semibold mb-3 text-center text-purple-700">Select Action</div>
-                                  <div class="grid grid-cols-2 gap-2 text-xs">
-                                      <div class="bg-purple-50 p-2 rounded text-center">
-                                          <i class="fas fa-calendar-plus text-purple-600 mb-1 block"></i>
-                                          Schedule
-                                      </div>
-                                      <div class="bg-purple-50 p-2 rounded text-center">
-                                          <i class="fas fa-users text-purple-600 mb-1 block"></i>
-                                          Clients
-                                      </div>
-                                      <div class="bg-purple-50 p-2 rounded text-center">
-                                          <i class="fas fa-credit-card text-purple-600 mb-1 block"></i>
-                                          Payment
-                                      </div>
-                                      <div class="bg-purple-50 p-2 rounded text-center">
-                                          <i class="fas fa-chart-bar text-purple-600 mb-1 block"></i>
-                                          Reports
-                                      </div>
-                                  </div>
-                              </div>
+                                <!-- Action Selection -->
+                                <div class="bg-white responsive-padding rounded-lg border-2 border-purple-200 shadow-sm flex-shrink-0 min-w-0">
+                                    <div class="text-sm font-semibold mb-3 text-center text-purple-700">Select Action</div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs">
+                                        <div class="bg-purple-50 p-2 rounded text-center">
+                                            <i class="fas fa-calendar-plus text-purple-600 mb-1 block"></i>
+                                            Schedule
+                                        </div>
+                                        <div class="bg-purple-50 p-2 rounded text-center">
+                                            <i class="fas fa-users text-purple-600 mb-1 block"></i>
+                                            Clients
+                                        </div>
+                                        <div class="bg-purple-50 p-2 rounded text-center">
+                                            <i class="fas fa-credit-card text-purple-600 mb-1 block"></i>
+                                            Payment
+                                        </div>
+                                        <div class="bg-purple-50 p-2 rounded text-center">
+                                            <i class="fas fa-chart-bar text-purple-600 mb-1 block"></i>
+                                            Reports
+                                        </div>
+                                    </div>
+                                </div>
 
-                              <!-- Arrow 3 -->
-                              <div class="flex-shrink-0 px-2">
-                                  <i class="fas fa-arrow-right text-purple-400 text-2xl"></i>
-                              </div>
+                                <!-- Arrow 3 -->
+                                <div class="flex-shrink-0 px-2">
+                                    <i class="fas fa-arrow-right text-purple-400 text-2xl"></i>
+                                </div>
 
-                              <!-- Task Completion -->
-                              <div class="bg-white p-4 rounded-lg text-center shadow-sm border-2 border-green-200 flex-shrink-0">
-                                  <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                                      <i class="fa-solid fa-thumbs-up"></i> <!-- Corrected icon class -->
-                                  </div>
-                                  <div class="text-sm font-semibold text-orange-700">Complete</div>
-                                  <div class="text-xs text-gray-600">Task Done</div>
-                              </div>
-                          </div>
+                                <!-- Task Completion -->
+                                <div class="bg-white responsive-padding rounded-lg text-center shadow-sm border-2 border-green-200 flex-shrink-0 min-w-0">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
+                                        <i class="fas fa-thumbs-up text-white"></i>
+                                    </div>
+                                    <div class="text-sm font-semibold text-orange-700">Complete</div>
+                                    <div class="text-xs text-gray-600">Task Done</div>
+                                </div>
+                            </div>
 
-                          <!-- Return Flow -->
-                          <div class="flex justify-center">
-                              <div class="bg-white rounded-lg px-6 py-3 shadow-sm border border-gray-300 flex items-center space-x-3">
-                                  <i class="fas fa-undo text-gray-500"></i>
-                                  <span class="text-sm text-gray-700 font-medium">Return to Dashboard</span>
-                                  <i class="fas fa-arrow-up text-gray-500"></i>
-                              </div>
-                          </div>
-                      </div>
+                            <!-- Return Flow -->
+                            <div class="flex justify-center">
+                                <div class="bg-white rounded-lg px-6 py-3 shadow-sm border border-gray-300 flex items-center space-x-3">
+                                    <i class="fas fa-undo text-gray-500"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Return to Dashboard</span>
+                                    <i class="fas fa-arrow-up text-gray-500"></i>
+                                </div>
+                            </div>
+                        </div>
 
-                      <!-- Mobile Flow -->
-                      <div class="md:hidden">
-                          <div class="text-center text-lg font-semibold text-gray-700 mb-6">User Journey Flow</div>
+                        <!-- Mobile Flow -->
+                        <div class="md:hidden">
+                            <div class="text-center text-lg font-semibold text-gray-700 mb-6">User Journey Flow</div>
 
-                          <div class="space-y-4">
-                              <!-- Step 1 -->
-                              <div class="flex items-center space-x-4">
-                                  <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
-                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-blue-200 shadow-sm">
-                                      <div class="flex items-center">
-                                          <i class="fas fa-sign-in-alt text-blue-500 mr-3 text-lg"></i>
-                                          <div>
-                                              <div class="font-semibold text-gray-800">Login</div>
-                                              <div class="text-xs text-gray-600">Secure Access</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                            <div class="space-y-4">
+                                <!-- Step 1 -->
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">1</div>
+                                    <div class="flex-1 bg-white responsive-padding rounded-lg border-2 border-blue-200 shadow-sm">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-sign-in-alt text-blue-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">Login</div>
+                                                <div class="text-xs text-gray-600">Secure Access</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                              <!-- Connecting line -->
-                              <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
+                                <!-- Connecting line -->
+                                <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
 
-                              <!-- Step 2 -->
-                              <div class="flex items-center space-x-4">
-                                  <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
-                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-green-200 shadow-sm">
-                                      <div class="flex items-center">
-                                          <i class="fas fa-tachometer-alt text-green-500 mr-3 text-lg"></i>
-                                          <div>
-                                              <div class="font-semibold text-gray-800">Dashboard</div>
-                                              <div class="text-xs text-gray-600">Main Hub</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                                <!-- Step 2 -->
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+                                    <div class="flex-1 bg-white responsive-padding rounded-lg border-2 border-green-200 shadow-sm">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-tachometer-alt text-green-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">Dashboard</div>
+                                                <div class="text-xs text-gray-600">Main Hub</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                              <!-- Connecting line -->
-                              <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
+                                <!-- Connecting line -->
+                                <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
 
-                              <!-- Step 3 -->
-                              <div class="flex items-start space-x-4">
-                                  <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
-                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-purple-200 shadow-sm">
-                                      <div class="font-semibold text-gray-800 mb-3">Select Action:</div>
-                                      <div class="grid grid-cols-2 gap-2">
-                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
-                                              <i class="fas fa-calendar-plus text-purple-600 mb-1 block"></i>
-                                              Schedule
-                                          </div>
-                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
-                                              <i class="fas fa-users text-purple-600 mb-1 block"></i>
-                                              Clients
-                                          </div>
-                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
-                                              <i class="fas fa-credit-card text-purple-600 mb-1 block"></i>
-                                              Payment
-                                          </div>
-                                          <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
-                                              <i class="fas fa-chart-bar text-purple-600 mb-1 block"></i>
-                                              Reports
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                                <!-- Step 3 -->
+                                <div class="flex items-start space-x-4">
+                                    <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">3</div>
+                                    <div class="flex-1 bg-white responsive-padding rounded-lg border-2 border-purple-200 shadow-sm">
+                                        <div class="font-semibold text-gray-800 mb-3">Select Action:</div>
+                                        <div class="grid grid-cols-2 gap-2">
+                                            <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                                <i class="fas fa-calendar-plus text-purple-600 mb-1 block"></i>
+                                                Schedule
+                                            </div>
+                                            <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                                <i class="fas fa-users text-purple-600 mb-1 block"></i>
+                                                Clients
+                                            </div>
+                                            <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                                <i class="fas fa-credit-card text-purple-600 mb-1 block"></i>
+                                                Payment
+                                            </div>
+                                            <div class="bg-purple-50 p-2 rounded text-center text-xs font-medium">
+                                                <i class="fas fa-chart-bar text-purple-600 mb-1 block"></i>
+                                                Reports
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                              <!-- Connecting line -->
-                              <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
+                                <!-- Connecting line -->
+                                <div class="ml-5 w-0.5 h-4 bg-gray-300"></div>
 
-                              <!-- Step 4 -->
-                              <div class="flex items-center space-x-4">
-                                  <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
-                                  <div class="flex-1 bg-white p-4 rounded-lg border-2 border-orange-200 shadow-sm">
-                                      <div class="flex items-center">
-                                          <i class="fas fa-check-circle text-orange-500 mr-3 text-lg"></i>
-                                          <div>
-                                              <div class="font-semibold text-gray-800">Complete Task</div>
-                                              <div class="text-xs text-gray-600">Task Done</div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                                <!-- Step 4 -->
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
+                                    <div class="flex-1 bg-white responsive-padding rounded-lg border-2 border-orange-200 shadow-sm">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-check-circle text-orange-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <div class="font-semibold text-gray-800">Complete Task</div>
+                                                <div class="text-xs text-gray-600">Task Done</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                              <!-- Return Flow -->
-                              <div class="flex justify-center pt-4">
-                                  <div class="bg-gray-100 border-2 border-gray-300 rounded-lg px-6 py-3 flex items-center space-x-2 shadow-sm">
-                                      <i class="fas fa-undo text-gray-600"></i>
-                                      <span class="text-sm font-medium text-gray-700">Return to Dashboard</span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                                <!-- Return Flow -->
+                                <div class="flex justify-center pt-4">
+                                    <div class="bg-gray-100 border-2 border-gray-300 rounded-lg px-6 py-3 flex items-center space-x-2 shadow-sm">
+                                        <i class="fas fa-undo text-gray-600"></i>
+                                        <span class="text-sm font-medium text-gray-700">Return to Dashboard</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Feature Showcase -->
         <section id="features" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-star text-blue-600 mr-3"></i>Feature Showcase
                 </h2>
@@ -984,7 +1189,7 @@
                             </div>
                             <h3 class="text-lg font-semibold text-gray-800">HIPAA-Compliant Scheduling</h3>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Advanced scheduling system with encrypted patient data, automated reminders, and audit trails for complete HIPAA compliance.
                         </p>
                         <div class="space-y-2 text-xs">
@@ -1011,7 +1216,7 @@
                             </div>
                             <h3 class="text-lg font-semibold text-gray-800">Secure Patient Management</h3>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Comprehensive patient profiles with treatment history, medical records, and secure photo storage with granular access controls.
                         </p>
                         <div class="space-y-2 text-xs">
@@ -1038,7 +1243,7 @@
                             </div>
                             <h3 class="text-lg font-semibold text-gray-800">Digital Consent Management</h3>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Electronic consent forms with version control, e-signatures, and automated renewal reminders for treatment protocols.
                         </p>
                         <div class="space-y-2 text-xs">
@@ -1061,11 +1266,11 @@
                     <div class="feature-card">
                         <div class="mb-4">
                             <div class="w-12 h-12 bg-green-400 rounded-lg flex items-center justify-center mb-3">
-                                <i class="fa-solid fa-globe"></i>
+                                <i class="fas fa-globe text-white text-xl"></i>
                             </div>
                             <h3 class="text-lg font-semibold text-gray-800">Real-time Compliance Monitoring</h3>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Live compliance dashboard with automated alerts, audit preparation, and violation prevention for seamless HIPAA adherence.
                         </p>
                         <div class="space-y-2 text-xs">
@@ -1092,7 +1297,7 @@
                             </div>
                             <h3 class="text-lg font-semibold text-gray-800">Secure Payment Processing</h3>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             HIPAA-compliant payment system with automated invoicing, membership management, and comprehensive financial reporting.
                         </p>
                         <div class="space-y-2 text-xs">
@@ -1115,11 +1320,11 @@
                     <div class="feature-card">
                         <div class="mb-4">
                             <div class="w-12 h-12 bg-green-200 rounded-lg flex items-center justify-center mb-3">
-                                <i class="fas fa-sitemap text-white text-xl"></i>
+                                <i class="fas fa-sitemap text-gray-600 text-xl"></i>
                             </div>
                             <h3 class="text-lg font-semibold text-gray-800">Multi-location Management</h3>
                         </div>
-                        <p class="text-gray-600 text-sm mb-4">
+                        <p class="text-gray-600 text-sm mb-4 flex-grow">
                             Centralized management for multiple locations with role-based access, unified reporting, and location-specific customizations.
                         </p>
                         <div class="space-y-2 text-xs">
@@ -1232,7 +1437,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="mt-4 text-xs text-gray-600 flex space-x-6">
+                    <div class="mt-4 text-xs text-gray-600 flex flex-wrap gap-4">
                         <span><i class="fas fa-check-circle text-green-500 mr-1"></i> Full Support</span>
                         <span><i class="fas fa-minus-circle text-yellow-500 mr-1"></i> Partial Support</span>
                         <span><i class="fas fa-times-circle text-red-500 mr-1"></i> Not Supported</span>
@@ -1243,7 +1448,7 @@
                 <div>
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Integration Ecosystem</h3>
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <div class="bg-blue-50 responsive-padding rounded-lg border-l-4 border-blue-500">
                             <h4 class="font-semibold text-blue-700 mb-2">
                                 <i class="fas fa-credit-card mr-2"></i>Payments
                             </h4>
@@ -1254,7 +1459,7 @@
                                 <li>• Apple Pay/Google Pay</li>
                             </ul>
                         </div>
-                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <div class="bg-green-50 responsive-padding rounded-lg border-l-4 border-green-500">
                             <h4 class="font-semibold text-green-700 mb-2">
                                 <i class="fas fa-envelope mr-2"></i>Communications
                             </h4>
@@ -1265,7 +1470,7 @@
                                 <li>• Voice/Video Calls</li>
                             </ul>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                        <div class="bg-purple-50 responsive-padding rounded-lg border-l-4 border-purple-500">
                             <h4 class="font-semibold text-purple-700 mb-2">
                                 <i class="fas fa-calculator mr-2"></i>Accounting
                             </h4>
@@ -1276,7 +1481,7 @@
                                 <li>• Wave Accounting</li>
                             </ul>
                         </div>
-                        <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                        <div class="bg-orange-50 responsive-padding rounded-lg border-l-4 border-orange-500">
                             <h4 class="font-semibold text-orange-700 mb-2">
                                 <i class="fas fa-file-signature mr-2"></i>Legal/Compliance
                             </h4>
@@ -1294,11 +1499,11 @@
 
         <!-- Development Flowchart -->
         <section id="development-flow" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-code-branch text-blue-600 mr-3"></i>Incremental Development Flowchart
                 </h2>
-                <div class="mb-4 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
+                <div class="mb-4 bg-yellow-50 border-l-4 border-yellow-500 responsive-padding rounded">
                     <p class="text-yellow-800">
                         <i class="fas fa-exclamation-triangle mr-2"></i>
                         <strong>Development Reality:</strong> This flowchart shows the enormous complexity of building a production-ready HIPAA-compliant platform. Each phase contains 50-200+ individual development steps.
@@ -1309,7 +1514,7 @@
                 <div class="phase-container">
                     <h3 class="text-xl font-semibold text-blue-600 mb-4">Phase 1: Foundation Setup (83 Steps)</h3>
                     <div class="grid md:grid-cols-3 gap-4 mb-4">
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Project Initialization</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Create Next.js project</div>
@@ -1322,7 +1527,7 @@
                                 <div class="step-box">Setup development scripts</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Database Setup</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Create Supabase project</div>
@@ -1335,7 +1540,7 @@
                                 <div class="step-box">Create audit logs table</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Authentication</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Setup Supabase auth</div>
@@ -1358,7 +1563,7 @@
                 <div class="phase-container">
                     <h3 class="text-xl font-semibold text-green-600 mb-4">Phase 2: Core Business Logic (127 Steps)</h3>
                     <div class="grid md:grid-cols-4 gap-4 mb-4">
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Client Management</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Client list component</div>
@@ -1371,7 +1576,7 @@
                                 <div class="step-box">Client data validation</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Scheduling System</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Calendar component</div>
@@ -1384,7 +1589,7 @@
                                 <div class="step-box">Appointment reminders</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">API Development</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Client CRUD APIs</div>
@@ -1397,7 +1602,7 @@
                                 <div class="step-box">Webhook handlers</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">UI Components</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Dashboard layout</div>
@@ -1420,7 +1625,7 @@
                 <div class="phase-container">
                     <h3 class="text-xl font-semibold text-orange-600 mb-4">Phase 3: HIPAA Compliance (156 Steps)</h3>
                     <div class="grid md:grid-cols-3 gap-4 mb-4">
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Security Implementation</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Data encryption at rest</div>
@@ -1433,7 +1638,7 @@
                                 <div class="step-box">Rate limiting</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Access Control</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Role-based permissions</div>
@@ -1446,7 +1651,7 @@
                                 <div class="step-box">Emergency access</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Audit & Monitoring</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Comprehensive audit logs</div>
@@ -1469,7 +1674,7 @@
                 <div class="phase-container">
                     <h3 class="text-xl font-semibold text-purple-600 mb-4">Phase 4: Advanced Features & Optimization (203 Steps)</h3>
                     <div class="grid md:grid-cols-4 gap-4 mb-4">
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Payment Integration</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Stripe integration</div>
@@ -1481,7 +1686,7 @@
                                 <div class="step-box">Financial reporting</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Communications</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Email templates</div>
@@ -1493,7 +1698,7 @@
                                 <div class="step-box">Opt-out management</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Reporting & Analytics</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Revenue reports</div>
@@ -1505,7 +1710,7 @@
                                 <div class="step-box">Export functionality</div>
                             </div>
                         </div>
-                        <div class="bg-white p-4 rounded border">
+                        <div class="bg-white responsive-padding rounded border">
                             <h4 class="font-semibold text-gray-700 mb-2">Performance & Testing</h4>
                             <div class="space-y-1">
                                 <div class="step-box">Performance optimization</div>
@@ -1524,7 +1729,7 @@
                 </div>
 
                 <!-- Development Complexity Summary -->
-                <div class="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 p-8 rounded-xl shadow-lg">
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-200 responsive-padding rounded-xl shadow-lg">
                     <h3 class="text-2xl font-bold text-red-800 mb-6 text-center">
                         <i class="fas fa-exclamation-triangle mr-3 text-3xl"></i>Total Development Complexity
                     </h3>
@@ -1538,48 +1743,48 @@
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white p-6 rounded-lg border border-red-100 shadow-sm">
+                        <div class="bg-white responsive-padding rounded-lg border border-red-100 shadow-sm">
                             <h4 class="font-bold text-red-700 mb-4 text-lg flex items-center">
                                 <i class="fas fa-list-ol mr-2"></i>Phase Breakdown
                             </h4>
                             <div class="space-y-3">
-                                <div class="flex justify-between items-center p-3 bg-blue-50 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-blue-50 rounded">
                                     <span class="font-medium">Phase 1 (Foundation)</span>
                                     <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-bold">83 steps</span>
                                 </div>
-                                <div class="flex justify-between items-center p-3 bg-green-50 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-green-50 rounded">
                                     <span class="font-medium">Phase 2 (Core Features)</span>
                                     <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">127 steps</span>
                                 </div>
-                                <div class="flex justify-between items-center p-3 bg-orange-50 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-orange-50 rounded">
                                     <span class="font-medium">Phase 3 (HIPAA Compliance)</span>
                                     <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-bold">156 steps</span>
                                 </div>
-                                <div class="flex justify-between items-center p-3 bg-purple-50 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-purple-50 rounded">
                                     <span class="font-medium">Phase 4 (Advanced Features)</span>
                                     <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">203 steps</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-white p-6 rounded-lg border border-red-100 shadow-sm">
+                        <div class="bg-white responsive-padding rounded-lg border border-red-100 shadow-sm">
                             <h4 class="font-bold text-red-700 mb-4 text-lg flex items-center">
                                 <i class="fas fa-chart-line mr-2"></i>Complexity Multipliers
                             </h4>
                             <div class="space-y-3">
-                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-red-50 to-red-100 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-gradient-to-r from-red-50 to-red-100 rounded">
                                     <span class="font-medium">Multi-tenancy</span>
                                     <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">+40%</span>
                                 </div>
-                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-gradient-to-r from-orange-50 to-orange-100 rounded">
                                     <span class="font-medium">HIPAA Compliance</span>
                                     <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">+60%</span>
                                 </div>
-                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-gradient-to-r from-yellow-50 to-yellow-100 rounded">
                                     <span class="font-medium">Real-time Features</span>
                                     <span class="bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-bold">+30%</span>
                                 </div>
-                                <div class="flex justify-between items-center p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded">
+                                <div class="flex justify-between items-center responsive-padding bg-gradient-to-r from-blue-50 to-blue-100 rounded">
                                     <span class="font-medium">Mobile Responsiveness</span>
                                     <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">+25%</span>
                                 </div>
@@ -1587,7 +1792,7 @@
                         </div>
                     </div>
 
-                    <div class="mt-6 p-4 bg-yellow-100 border border-yellow-300 rounded-lg">
+                    <div class="mt-6 responsive-padding bg-yellow-100 border border-yellow-300 rounded-lg">
                         <p class="text-yellow-800 text-center font-medium">
                             <i class="fas fa-info-circle mr-2"></i>
                             These multipliers compound the base complexity, resulting in an estimated 1,100+ effective development hours for a production-ready platform.
@@ -1597,10 +1802,9 @@
             </div>
         </section>
 
-
         <!-- Technical Architecture -->
         <section id="technical-arch" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-server text-blue-600 mr-3"></i>Technical Architecture
                 </h2>
@@ -1609,7 +1813,7 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Technology Stack Decision Matrix</h3>
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <div class="bg-blue-50 responsive-padding rounded-lg border-l-4 border-blue-500">
                             <h4 class="font-semibold text-blue-700 mb-2">Frontend</h4>
                             <div class="space-y-2 text-sm">
                                 <div class="bg-white p-2 rounded">
@@ -1630,7 +1834,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <div class="bg-green-50 responsive-padding rounded-lg border-l-4 border-green-500">
                             <h4 class="font-semibold text-green-700 mb-2">Backend</h4>
                             <div class="space-y-2 text-sm">
                                 <div class="bg-white p-2 rounded">
@@ -1651,7 +1855,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                        <div class="bg-purple-50 responsive-padding rounded-lg border-l-4 border-purple-500">
                             <h4 class="font-semibold text-purple-700 mb-2">Integrations</h4>
                             <div class="space-y-2 text-sm">
                                 <div class="bg-white p-2 rounded">
@@ -1672,7 +1876,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                        <div class="bg-orange-50 responsive-padding rounded-lg border-l-4 border-orange-500">
                             <h4 class="font-semibold text-orange-700 mb-2">DevOps</h4>
                             <div class="space-y-2 text-sm">
                                 <div class="bg-white p-2 rounded">
@@ -1699,11 +1903,11 @@
                 <!-- Multi-tenant Architecture -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Multi-tenant Architecture Implementation</h3>
-                    <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-gray-50 responsive-padding rounded-lg">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="bg-white p-4 rounded border">
+                            <div class="bg-white responsive-padding rounded border">
                                 <h4 class="font-semibold text-indigo-600 mb-3">Database Level Isolation</h4>
-                                <div class="bg-gray-100 p-3 rounded text-xs font-mono mb-3">
+                                <div class="bg-gray-100 responsive-padding rounded text-xs font-mono mb-3 overflow-x-auto">
                                     <div class="text-green-600">-- Row Level Security Policy</div>
                                     <div>CREATE POLICY "tenant_isolation"</div>
                                     <div>ON appointments FOR ALL</div>
@@ -1717,9 +1921,9 @@
                                     <li>• Cross-tenant data prevention</li>
                                 </ul>
                             </div>
-                            <div class="bg-white p-4 rounded border">
+                            <div class="bg-white responsive-padding rounded border">
                                 <h4 class="font-semibold text-teal-600 mb-3">Application Level Controls</h4>
-                                <div class="bg-gray-100 p-3 rounded text-xs font-mono mb-3">
+                                <div class="bg-gray-100 responsive-padding rounded text-xs font-mono mb-3 overflow-x-auto">
                                     <div class="text-green-600">// Middleware tenant resolution</div>
                                     <div>export function middleware(req) {</div>
                                     <div>  const tenantId = extractTenant(req);</div>
@@ -1740,37 +1944,37 @@
                 <!-- System Architecture Diagram -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">System Architecture Overview</h3>
-                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg">
-                        <div class="grid md:grid-cols-5 gap-4 items-center">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-100 responsive-padding rounded-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
                             <!-- User Layer -->
                             <div class="text-center">
-                                <div class="bg-blue-500 p-4 rounded-lg mb-2">
+                                <div class="bg-blue-500 responsive-padding rounded-lg mb-2">
                                     <i class="fas fa-users text-white text-2xl"></i>
                                 </div>
                                 <div class="text-sm font-medium">Users</div>
                                 <div class="text-xs text-gray-600">Web • Mobile • Tablet</div>
                             </div>
 
-                            <div class="text-center">
+                            <div class="text-center hidden md:block">
                                 <i class="fas fa-arrow-right text-gray-400 text-xl"></i>
                             </div>
 
                             <!-- Frontend Layer -->
                             <div class="text-center">
-                                <div class="bg-green-500 p-4 rounded-lg mb-2">
+                                <div class="bg-green-500 responsive-padding rounded-lg mb-2">
                                     <i class="fab fa-react text-white text-2xl"></i>
                                 </div>
                                 <div class="text-sm font-medium">Next.js App</div>
                                 <div class="text-xs text-gray-600">React • TypeScript • Tailwind</div>
                             </div>
 
-                            <div class="text-center">
+                            <div class="text-center hidden md:block">
                                 <i class="fas fa-arrow-right text-gray-400 text-xl"></i>
                             </div>
 
                             <!-- Backend Layer -->
                             <div class="text-center">
-                                <div class="bg-purple-500 p-4 rounded-lg mb-2">
+                                <div class="bg-purple-500 responsive-padding rounded-lg mb-2">
                                     <i class="fas fa-database text-white text-2xl"></i>
                                 </div>
                                 <div class="text-sm font-medium">Supabase</div>
@@ -1783,23 +1987,23 @@
                             <div class="text-center mb-4">
                                 <div class="text-sm font-medium text-gray-700">Third-Party Integrations</div>
                             </div>
-                            <div class="grid grid-cols-4 gap-4 text-center">
-                                <div class="bg-white p-3 rounded">
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                                <div class="bg-white responsive-padding rounded">
                                     <i class="fab fa-stripe text-blue-500 text-xl mb-1"></i>
                                     <div class="text-xs font-medium">Stripe</div>
                                     <div class="text-xs text-gray-500">Payments</div>
                                 </div>
-                                <div class="bg-white p-3 rounded">
+                                <div class="bg-white responsive-padding rounded">
                                     <i class="fas fa-sms text-green-500 text-xl mb-1"></i>
                                     <div class="text-xs font-medium">Twilio</div>
                                     <div class="text-xs text-gray-500">SMS</div>
                                 </div>
-                                <div class="bg-white p-3 rounded">
+                                <div class="bg-white responsive-padding rounded">
                                     <i class="fas fa-envelope text-red-500 text-xl mb-1"></i>
                                     <div class="text-xs font-medium">Mailgun</div>
                                     <div class="text-xs text-gray-500">Email</div>
                                 </div>
-                                <div class="bg-white p-3 rounded">
+                                <div class="bg-white responsive-padding rounded">
                                     <i class="fas fa-file-signature text-purple-500 text-xl mb-1"></i>
                                     <div class="text-xs font-medium">DocuSign</div>
                                     <div class="text-xs text-gray-500">E-sign</div>
@@ -1813,7 +2017,7 @@
                 <div>
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">Performance & Scalability Considerations</h3>
                     <div class="grid md:grid-cols-3 gap-6">
-                        <div class="bg-green-50 p-4 rounded-lg border">
+                        <div class="bg-green-50 responsive-padding rounded-lg border">
                             <h4 class="font-semibold text-green-700 mb-2">
                                 <i class="fas fa-tachometer-alt mr-2"></i>Performance Optimization
                             </h4>
@@ -1825,7 +2029,7 @@
                                 <li>• Code splitting & tree shaking</li>
                             </ul>
                         </div>
-                        <div class="bg-blue-50 p-4 rounded-lg border">
+                        <div class="bg-blue-50 responsive-padding rounded-lg border">
                             <h4 class="font-semibold text-blue-700 mb-2">
                                 <i class="fas fa-expand-arrows-alt mr-2"></i>Scalability Strategy
                             </h4>
@@ -1837,7 +2041,7 @@
                                 <li>• Auto-scaling infrastructure</li>
                             </ul>
                         </div>
-                        <div class="bg-purple-50 p-4 rounded-lg border">
+                        <div class="bg-purple-50 responsive-padding rounded-lg border">
                             <h4 class="font-semibold text-purple-700 mb-2">
                                 <i class="fas fa-chart-line mr-2"></i>Monitoring & Analytics
                             </h4>
@@ -1856,12 +2060,12 @@
 
         <!-- HIPAA Compliance -->
         <section id="compliance" class="mb-12">
-            <div class="bg-white p-8 rounded-lg shadow-sm">
+            <div class="bg-white responsive-padding rounded-lg shadow-sm">
                 <h2 class="text-3xl font-bold text-gray-800 mb-6">
                     <i class="fas fa-shield-alt text-blue-600 mr-3"></i>HIPAA Compliance Framework
                 </h2>
 
-                <div class="mb-6 bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                <div class="mb-6 bg-red-50 border-l-4 border-red-500 responsive-padding rounded">
                     <p class="text-red-800">
                         <i class="fas fa-exclamation-triangle mr-2"></i>
                         <strong>Critical Requirement:</strong> HIPAA compliance is not optional for medical spas handling protected health information (PHI). Violations can result in fines ranging from $100,000 to $1.5 million per incident.
@@ -1870,34 +2074,34 @@
 
                 <!-- HIPAA Safeguards -->
                 <div class="grid md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <div class="bg-blue-50 responsive-padding rounded-lg border-l-4 border-blue-500">
                         <h3 class="text-lg font-semibold text-blue-800 mb-4">
                             <i class="fas fa-user-shield mr-2"></i>Administrative Safeguards
                         </h3>
                         <div class="space-y-3 text-sm">
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Security Officer Assignment</strong>
                                     <div class="text-gray-600">Designated HIPAA compliance officer for each tenant</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Workforce Training</strong>
                                     <div class="text-gray-600">Built-in compliance training modules and tracking</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Access Management</strong>
                                     <div class="text-gray-600">Role-based permissions and regular access reviews</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Incident Response</strong>
                                     <div class="text-gray-600">Automated breach detection and response procedures</div>
@@ -1906,34 +2110,34 @@
                         </div>
                     </div>
 
-                    <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <div class="bg-green-50 responsive-padding rounded-lg border-l-4 border-green-500">
                         <h3 class="text-lg font-semibold text-green-800 mb-4">
                             <i class="fas fa-laptop mr-2"></i>Technical Safeguards
                         </h3>
                         <div class="space-y-3 text-sm">
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Access Control</strong>
                                     <div class="text-gray-600">Unique user identification and automatic logoff</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Audit Controls</strong>
                                     <div class="text-gray-600">Comprehensive logging of PHI access and modifications</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Integrity Controls</strong>
                                     <div class="text-gray-600">Checksums and digital signatures for data integrity</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Transmission Security</strong>
                                     <div class="text-gray-600">End-to-end encryption for all data in transit</div>
@@ -1942,34 +2146,34 @@
                         </div>
                     </div>
 
-                    <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                    <div class="bg-orange-50 responsive-padding rounded-lg border-l-4 border-orange-500">
                         <h3 class="text-lg font-semibold text-orange-800 mb-4">
                             <i class="fas fa-building mr-2"></i>Physical Safeguards
                         </h3>
                         <div class="space-y-3 text-sm">
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Facility Access Controls</strong>
                                     <div class="text-gray-600">Guidance for physical security best practices</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Workstation Use</strong>
                                     <div class="text-gray-600">Security requirements for devices accessing PHI</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Device Controls</strong>
                                     <div class="text-gray-600">Mobile device management and encryption requirements</div>
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
+                                <i class="fas fa-check text-green-500 mr-2 mt-1 flex-shrink-0"></i>
                                 <div>
                                     <strong>Media Controls</strong>
                                     <div class="text-gray-600">Secure disposal and transfer of electronic media</div>
@@ -1983,11 +2187,11 @@
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold text-gray-700 mb-4">OmniLux HIPAA Implementation</h3>
                     <div class="grid md:grid-cols-2 gap-6">
-                        <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="bg-gray-50 responsive-padding rounded-lg">
                             <h4 class="font-semibold text-gray-800 mb-3">Automated Compliance Features</h4>
                             <div class="space-y-3">
                                 <div class="flex items-center">
-                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                                    <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <i class="fas fa-eye text-white text-sm"></i>
                                     </div>
                                     <div>
@@ -1996,7 +2200,7 @@
                                     </div>
                                 </div>
                                 <div class="flex items-center">
-                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                                    <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
                                         <i class="fas fa-lock text-white text-sm"></i>
                                     </div>
                                     <div>
