@@ -6,11 +6,12 @@
     <meta name="description" content="OmniLux CRM - Complete wireframes, feature showcase, and market analysis for HIPAA-compliant medical spa management platform">
     <meta name="author" content="Dynamic Duo Team">
     <title>OmniLux CRM - Enhanced Wireframes &amp; Feature Showcase</title>
-   <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
+        /* Responsive wireframe boxes */
         .wireframe-box {
             border: 2px dashed #6b7280;
             background: #f9fafb;
@@ -18,74 +19,158 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
+            font-size: clamp(0.75rem, 2vw, 0.875rem);
             color: #6b7280;
+            padding: 0.75rem;
+            text-align: center;
         }
+        
+        /* Dashboard mockup with responsive styling */
         .dashboard-mockup {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
             background: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
+        
+        /* Navigation items with mobile-friendly touch targets */
         .nav-item {
-            padding: 12px 16px;
+            padding: clamp(0.625rem, 2vw, 0.75rem) clamp(0.875rem, 3vw, 1rem);
             border-radius: 6px;
             transition: all 0.2s;
             cursor: pointer;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
         }
+        
         .nav-item:hover {
             background: #f3f4f6;
         }
+        
         .nav-item.active {
             background: #3b82f6;
             color: white;
         }
+        
+        /* Feature cards with responsive spacing */
         .feature-card {
             border: 1px solid #e5e7eb;
             border-radius: 8px;
-            padding: 20px;
+            padding: clamp(1rem, 3vw, 1.25rem);
             background: white;
             transition: transform 0.2s, box-shadow 0.2s;
         }
+        
         .feature-card:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+        
+        /* Step boxes with responsive text */
         .step-box {
             background: #f0f9ff;
             border: 1px solid #0ea5e9;
             border-radius: 6px;
-            padding: 8px 12px;
+            padding: clamp(0.375rem, 1.5vw, 0.5rem) clamp(0.625rem, 2vw, 0.75rem);
             margin: 4px;
-            font-size: 12px;
+            font-size: clamp(0.625rem, 1.5vw, 0.75rem);
             display: inline-block;
+            word-break: break-word;
         }
+        
+        /* Phase containers with responsive padding */
         .phase-container {
             background: #fafafa;
             border-left: 4px solid #3b82f6;
-            padding: 20px;
-            margin: 16px 0;
+            padding: clamp(1rem, 3vw, 1.25rem);
+            margin: clamp(0.75rem, 2vw, 1rem) 0;
         }
+        
+        /* Mobile-specific optimizations */
+        @media (max-width: 640px) {
+            .wireframe-box {
+                min-height: 50px;
+            }
+            
+            .nav-item {
+                font-size: 0.875rem;
+            }
+            
+            .feature-card {
+                margin-bottom: 0.75rem;
+            }
+            
+            .step-box {
+                display: block;
+                width: 100%;
+                margin: 0.25rem 0;
+            }
+        }
+        
+        /* Tablet optimizations */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .wireframe-box {
+                padding: 1rem;
+            }
+            
+            .feature-card {
+                padding: 1.125rem;
+            }
+        }
+        
+        /* Desktop optimizations */
+        @media (min-width: 1025px) {
+            .dashboard-mockup {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Print styles */
         @media print {
-            body { print-color-adjust: exact; }
-            .no-print { display: none !important; }
+            body { 
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            .no-print { 
+                display: none !important; 
+            }
         }
-
-        /* Smooth scrolling for anchor links */
+        
+        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-
-        /* Focus states for better accessibility */
+        
+        /* Enhanced focus states for accessibility */
         a:focus,
         button:focus {
             outline: 2px solid #3b82f6;
             outline-offset: 2px;
         }
-
-        /* Loading state optimization */
+        
+        /* Touch-friendly tap targets */
+        @media (pointer: coarse) {
+            .nav-item,
+            button,
+            a {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+        
+        /* Prevent horizontal scroll on mobile */
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Ensure images are responsive */
         img {
-            loading: lazy;
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
